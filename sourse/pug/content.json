@@ -1,11 +1,23 @@
 {
 	"nav":[
-		{ "name":"Наши работы", "url":"#"},
-		{	"name":"Цены", "url":"#"},
-		{"name":"Калькулятор", "url":"#"},
-		{"name":"Акции", "url":"#"} ,
+		{ "name":"Toys", "url":"#"},
+		{	"name":"Baby Care", "url":"#"},
+		{"name":"Baby Room", "url":"#"},
+		{"name":"Feeding", "url":"#"} ,
 		{
-			"name":"Заказать", 
+			"name":"Outdoors",
+			"url":"#"
+			},
+		{
+			"name":"Clothes",
+			"url":"#"
+			},
+		{
+			"name":"Shoes",
+			"url":"#"
+			},
+		{
+			"name":"School",
 			"url":"#"
 			}
 	],

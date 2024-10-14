@@ -1,9 +1,39 @@
 mixin footer()
 	+b.FOOTER.footer.section
 		.container
-			.row
-				.col
-					
-				.col Footer
-				.col
+			+img('img/svg/moon.svg').moon
+			+img('img/svg/tree-left.svg').tree.tree-left
+			+img('img/svg/tree-right.svg').tree.tree-right
+			+e.top-row.row
+				.col.col-lg-4.col-center
+					+e.logo(href='#'): +img(src="img/svg/logo-light.svg", alt="")
+				.col-lg-8: .wrap.row
+					.col-6.col-lg.col-xl-auto
+						+e.col-title.title-line.text-light.fw-700 Catalogue
+						ul
+							li: a(href='#') Toys
+							li: a(href='#') Baby Room
+							li: a(href='#') Outdoors
+							li: a(href='#') Gaming
+					.col-6.col-lg.col-xl-auto
+						+e.col-title.title-line.text-light.fw-700 Information
+						ul
+							li: a(href='#') Payment
+							li: a(href='#') Delivery
+							li: a(href='#') Contact Us
+							li: a(href='#') Help
+					.col-auto
+						+soc
+					.col-12.col-md-6.col-xl-auto: .col-contacts
+						+e.col-title.title-line.text-light.fw-700 Contacts
+						ul
+							li: a(href='tel:+441202946444') +44 1202 946444
+						+e.sub-wrap
+							.title.ls-6.text-light Subscribe
+							+subscribe
+			+e.bottom-row.row
 				.col-auto
+					.small.text-light © Copyright 2012. All rights reserved.
+				.col-auto
+					a(href='#').small Terms &amp;&nbsp;Conditions
+					a(href='#').small Privacy &amp;&nbsp;Cookies

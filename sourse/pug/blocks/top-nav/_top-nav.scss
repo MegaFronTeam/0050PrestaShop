@@ -1,26 +1,19 @@
 .top-nav {
-	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	// --sPT: #{rem(27)};
+	// --sPB: #{rem(27)};
 	// --sTPB: #{rem()};
 	&__row{
 		// --bs-gutter-x: #{rem()};
 		// @include media-breakpoint-up(md) {
-			--bs-gutter-y: var(--bs-gutter-x);
+			// --bs-gutter-y: var(--bs-gutter-x);
 		// }
+    @include media-breakpoint-up(lg) {
+      padding-top: rem(44);
+    }
+	}
 
-	}
-	.section-title{
-		
-	}
-	&__col{
+  // background: #1AC0C6;
 
-	}
-	&__item{
-
-	}
-	&__slide{
-		height: auto;
-	}
 
 
 	@include media-breakpoint-up(sm) {}
@@ -33,5 +26,4 @@
 
 	@include media-breakpoint-down(xs) {}
 }
-
 

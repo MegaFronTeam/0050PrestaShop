@@ -2,8 +2,32 @@ mixin topLine()
 	// start topLine
 	+b.topLine.section#topLine&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 topLine
-				
-			.row
+			+e.row.row.ls-6
+				+e.col.col-auto: ul
+					li: a(href='#') Contact Us
+					li: a(href='#') Help
+				+e.col.col-auto
+					+e.city
+						+e.current-city(href='#') Warsaw
+						+e.find-store(href='#')
+							+icon('location')
+							| Find a store
+					+e.lang(href='#'): +img(src="img/svg/language.svg", alt="")
+	// end topLine
+
+mixin topLine2()
+	// start topLine
+	+b.topLine2.section#topLine&attributes(attributes)
+		.container
+			+e.row.row
+				.col
+					+e.logo(href='#'): +img(src="img/svg/logo-light.svg", alt="")
+				.col-auto.d-none.d-md-block
+					+search
+					+navUser
+				.col-auto.d-none.d-md-block
+					+navLk
+				.col-auto.d-lg-none
+					+b.toggle-menu-mobile--js
+						span
 	// end topLine

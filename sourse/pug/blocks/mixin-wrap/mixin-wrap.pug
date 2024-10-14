@@ -28,9 +28,16 @@ mixin addblock()
 mixin search()
 	+b.search-block
 		form
-			input(type="text" placeholder="Поиск по номеру или названию запчасти" inputmode='search')
+			input(type="text" placeholder="" inputmode='search')
 			button 
 				+icon("search")
+
+mixin subscribe
+	+b.search-block--subscr.ls-7
+		form
+			input(type="text" placeholder="Enter email" inputmode='search')
+			button 
+				+icon("send")
 
 mixin page-head(t,...items)
 	+b.page-head
@@ -44,3 +51,26 @@ mixin parts(elem)
 	script.
 		addBlock(`#{elem}`)
 	div(id=`${elem}Wrap`)
+
+mixin navUser
+	+b.nav-user&attributes(attributes)
+		ul
+			li.active: a(href='#'): +icon('heart')
+			li: a(href='#'): +icon('compare')
+			li.active: a(href='#')
+				+icon('cart')
+				+e.price €193
+
+mixin navLk
+	+b.nav-lk&attributes(attributes)
+		+e.lk.A(href='#'): +icon('user')
+		+e.btns.ls-6
+			+e.btn.btn.btn-secondary.btn-sm.fw-700(href='#') Sign Up
+			+e.btn.link(href='#') Log In
+
+mixin main
+	main
+		+img('img/svg/hero-bg-1.svg').hero-bg.hero-bg-1
+		+img('img/svg/hero-bg-2.svg').hero-bg.hero-bg-2
+		if block
+			block

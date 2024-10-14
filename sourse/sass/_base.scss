@@ -110,8 +110,37 @@ body {
 	
 	
 }
-main{
+main {
 	flex-grow: 1;
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 200vw;
+    height: 768px;
+    position: absolute;
+    top: rem(-20);
+    @include media-breakpoint-up(lg) {
+      top: rem(-120);
+    }
+    left: -100vw;
+    z-index: -1;
+    background: linear-gradient(180deg, #1ac0c6 0%, rgba(26, 192, 198, 0) 100%);
+  }
+
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    max-width: 20vw;
+  }
+
+  .hero-bg-1 {
+    left: 0;
+  }
+  .hero-bg-2 {
+    right: 0;
+  }
 }
 
 
@@ -162,6 +191,9 @@ main{
 .fw-400 {
 	font-weight: 400;
 }
+.fw-700 {
+	font-weight: 700;
+}
 
 .fw-900 {
 	font-weight: 900;
@@ -174,6 +206,19 @@ main{
 }
 .fw-100 {
 	font-weight: 100;
+}
+
+.ls-7 {
+	letter-spacing: 0.07em;
+}
+.ls-6 {
+	letter-spacing: 0.06em;
+}
+.ls-4 {
+	letter-spacing: 0.04em;
+}
+.ls-3 {
+	letter-spacing: 0.03em;
 }
 
 .row--sm {
@@ -380,6 +425,13 @@ img.img-bg,
 	}
 }
 
+.text-purple {
+  color: $purple;
+}
+.text-disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+
 
 .bg-wrap {
 	position: relative;
@@ -471,4 +523,21 @@ iframe {
 		height: 100%;
 		object-fit: cover;
 	}
+}
+
+.btn-secondary {
+  --bs-btn-color: white;
+  --bs-btn-bg: #f9e920;
+  --bs-btn-border-color: #f9e920;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #faec41;
+  --bs-btn-hover-border-color: #faeb36;
+  --bs-btn-focus-shadow-rgb: 212, 198, 27;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #faed4d;
+  --bs-btn-active-border-color: #faeb36;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #f9e920;
+  --bs-btn-disabled-border-color: #f9e920;
 }

@@ -151,9 +151,9 @@ $green-200: tint-color($green, 60%) !default;
 $green-300: tint-color($green, 40%) !default;
 $green-400: tint-color($green, 20%) !default;
 $green-500: $green !default;
-$green-600: shade-color($green, 20%) !default;
-$green-700: shade-color($green, 40%) !default;
-$green-800: shade-color($green, 60%) !default;
+$green-600: #1AC0C6;;
+$green-700: #088AA4;
+$green-800: #09A0BB;
 $green-900: shade-color($green, 80%) !default;
 
 $teal-100: #D1F2F4;
@@ -299,7 +299,7 @@ $cyans: (
 
 // scss-docs-start theme-color-variables
 $primary:       $teal;
-$secondary:     $gray-600 !default;
+$secondary:     $yellow-500;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
@@ -505,7 +505,7 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1320px
+  xxl: 1224px
 ) !default;
 // scss-docs-end container-max-widths
 
@@ -825,7 +825,7 @@ $btn-white-space:             null !default; // Set to `nowrap` to prevent text 
 
 $btn-padding-y-sm:            9px;
 $btn-padding-x-sm:            20px;
-$btn-font-size-sm:            $input-btn-font-size-sm !default;
+$btn-font-size-sm:            16px;
 
 $btn-padding-y-lg:            $input-btn-padding-y-lg !default;
 $btn-padding-x-lg:            $input-btn-padding-x-lg !default;
@@ -847,7 +847,7 @@ $btn-link-focus-shadow-rgb:   to-rgb(mix(color-contrast($link-color), $link-colo
 
 // Allows for customizing button radius independently from global border radius
 $btn-border-radius:           50px;
-$btn-border-radius-sm:        var(--#{$prefix}border-radius-sm) !default;
+$btn-border-radius-sm:        20px;
 $btn-border-radius-lg:        var(--#{$prefix}border-radius-lg) !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;

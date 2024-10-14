@@ -12,17 +12,67 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(22 / #{$h} *1em );
 }
+.icon-cart {
+	$h: 24;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(24 / #{$h} *1em );
+}
 .icon-check {
 	$h: 27;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(27 / #{$h} *1em );
+}
+.icon-chevron-left {
+	$h: 24;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(24 / #{$h} *1em );
+}
+.icon-chevron-right {
+	$h: 24;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(24 / #{$h} *1em );
+}
+.icon-compare {
+	$h: 24;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(24 / #{$h} *1em );
+}
+.icon-facebook {
+	$h: 32;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(32 / #{$h} *1em );
 }
 .icon-fb {
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
 }
+.icon-heart {
+	$h: 24;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(24 / #{$h} *1em );
+}
 .icon-instagram {
+	$h: 32;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(32 / #{$h} *1em );
+}
+.icon-location {
+	$h: 20;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(14 / #{$h} *1em );
+}
+.icon-search {
+	$h: 24;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(24 / #{$h} *1em );
+}
+.icon-send {
+	$h: 24;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(24 / #{$h} *1em );
+}
+.icon-share {
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
@@ -31,6 +81,11 @@
 	$h: 16;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(16 / #{$h} *1em );
+}
+.icon-user {
+	$h: 32;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(32 / #{$h} *1em );
 }
 .icon-viber {
 	$h: 16;
@@ -43,7 +98,12 @@
 	width: calc(24 / #{$h} *1em );
 }
 .icon-whatsapp {
-	$h: 16;
+	$h: 32;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
-	width: calc(16 / #{$h} *1em );
+	width: calc(32 / #{$h} *1em );
+}
+.icon-youtube {
+	$h: 32;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(32 / #{$h} *1em );
 }

@@ -1,0 +1,163 @@
+// start .sPromo
+.sPromo {
+	// --sPT: #{rem()};
+	@include media-breakpoint-up(md) {
+    --sPB: #{rem(20)};
+  }
+	// --sTPB: #{rem()};
+	
+	&__row {
+		// --bs-gutter-x: #{rem()};
+		--bs-gutter-y: var(--bs-gutter-x);
+	}
+	h2 {
+    color: $body-color;
+  }
+
+	&__img-wrap {
+		position: relative;
+    display: inline-block;
+    height: rem(260);
+    width: 100%;
+    border-radius: 30px;
+    &:hover {
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.25);
+    }
+    @include media-breakpoint-down(md) {
+      @include block(260/392)
+    }
+
+    img {
+      z-index: 1;
+      border-radius: inherit;
+      object-position: top;
+    }
+	}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sPromo
+
+.sAges {
+	// --sPT: #{rem()};
+	--sPB: #{rem(40)};
+	// --sTPB: #{rem()};
+  @include media-breakpoint-up(lg) {
+    --sPT: #{rem(40)};
+  }
+
+	&__row {
+		--bs-gutter-x: #{rem(50)};
+		--bs-gutter-y: #{rem(50)};
+    align-items: center;
+	}
+  &__inner-row {
+		--bs-gutter-y: var(--bs-gutter-x);
+  }
+
+  h2 {
+    letter-spacing: 0.03em;
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__inner-wrap {
+    background: $body-bg;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05), 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+    padding: rem(36) rem(20);
+    padding-top: rem(50);
+    padding-left: rem(48);
+    border-radius: 20px;
+    @include media-breakpoint-up(md) {
+    }
+
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 5px;
+      height: calc(100% - 54px);
+
+      background: $primary;
+      transform: translateY(-50%);
+    }
+  }
+
+  .baby {
+    margin-left: rem(34);
+  }
+}
+
+.age-category {
+  display: inline-block;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+
+  &__img-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -36%);
+
+    border: 5px solid $white;
+    border-radius: 50px;
+    background: $purple;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 10px 0 rgba(20, 169, 174, 0.3);
+    @include mt;
+
+    img {
+      // transform: translate(-5%, -10%);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include mt;
+    }
+  }
+
+  &__age {
+    color: $teal-400;
+    font-size: 28px;
+  }
+
+  background: $white;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  border: 2px solid $teal-200;
+  border-radius: 20px;
+  --card-w: 92px;
+  width: var(--card-w);
+  height: var(--card-w);
+
+  &:hover, &.active {
+    background: $teal-400;
+    border-color: $teal-400;
+    .age-category__age {
+      color: $white;
+    }
+
+    .age-category__img-wrap {
+      width: 74px;
+      height: 74px;
+      transform: translate(-50%, -60%);
+    }
+    img {
+      width: 90%;
+      transform: translate(10%, 5%) scale(1.4);
+    }
+  }
+
+}

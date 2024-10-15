@@ -1,0 +1,84 @@
+// start .sBrands
+.sBrands {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	--sTPB: #{rem(90)};
+  overflow: hidden;
+  @include media-breakpoint-up(lg) {
+    --sPB: #{rem(126)};
+  }
+
+	&__row {
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+	}
+  &__small-r {
+
+  }
+  .row {
+    --bs-gutter-y: var(--bs-gutter-x);
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .brands-img {
+    position: absolute;
+    top: calc(-1 * var(--sPT));
+  }
+  .brands-l {
+    right: 90%;
+    @include media-breakpoint-up(md) {
+      right: 103%;
+    }
+  }
+  .brands-r {
+    left: 59%;
+    @include media-breakpoint-up(md) {
+      left: 82%;
+    }
+  }
+
+	.clouds {
+    position: absolute;
+    top: calc(-1 * var(--sPT));
+    left: -14px;
+    z-index: -1;
+    transform: translateY(-10%);
+    @include media-breakpoint-down(md) {
+      max-width: rem(300);
+      left: -30px;
+      transform: translateY(-20%);
+    }
+
+  }
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sBrands
+
+.brand-item {
+  position: relative;
+  
+  background: white;
+  border-radius: 50%;
+  @include block(1,1);
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+  }
+
+  &:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.25);
+  }
+}

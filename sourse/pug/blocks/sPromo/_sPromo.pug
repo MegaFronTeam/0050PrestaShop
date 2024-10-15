@@ -1,0 +1,38 @@
+mixin sPromo(data)
+	// start sPromo
+	+b.SECTION.sPromo.section#sPromo&attributes(attributes)
+		.container
+			+sectionTitle('Promotions')
+			+e.row.row
+				+e.col.col-md-6.col-xl-4
+					+e.img-wrap(href='#'): +img(src="img/promo-1.png", alt="").img-bg
+				+e.col.col-md-6.col-xl-4
+					+e.img-wrap(href='#'): +img(src="img/promo-2.png", alt="").img-bg
+				+e.col.col-md-6.col-xl-4
+					+e.img-wrap(href='#'): +img(src="img/promo-3.png", alt="").img-bg
+	// end sPromo
+
+mixin sAges(data)
+	// start sAges
+	+b.SECTION.sAges.section#sAges&attributes(attributes)
+		.container
+			+img(src="img/svg/baby.svg", alt="").baby
+			+e.inner-wrap
+				+e.row.row
+					+e.col.col-lg-3
+						h2 Shop by ages
+					+e.col.col-lg
+						+e.inner-row.row
+							+e.col.col: +ageCategory('0-1', 6).active
+							+e.col.col: +ageCategory('2-3', 5)
+							+e.col.col: +ageCategory('4-5', 4)
+							+e.col.col: +ageCategory('6-8', 3)
+							+e.col.col: +ageCategory('9-11', 2)
+							+e.col.col: +ageCategory('12+', 1)
+
+	// end sAges
+
+mixin ageCategory(age, i)
+	+b.age-category(href='#')&attributes(attributes)
+		+e.age.ls-4.fw-700= age
+		+e.img-wrap: +img(`img/svg/age-${i}.svg`)

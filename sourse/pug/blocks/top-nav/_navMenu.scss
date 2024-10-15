@@ -49,6 +49,7 @@
 
 	@include media-breakpoint-up(lg) {
     margin-left: rem(10);
+    pointer-events: none;
   }
 	span:after,
 	span:before {

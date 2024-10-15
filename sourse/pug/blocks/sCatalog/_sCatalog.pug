@@ -1,41 +1,60 @@
-mixin product-item(i, t, p ,pr)
-	+b.ARTICLE.product-item
-		+e.img-wrap(href="#")
-			//- если надо картинку по центру  вывести использовать обертку .img-wrap-center  - если нет- убираем
-			.img-wrap-center 
-				+img(`img/prod-${i}.jpg`)
+mixin product-item(i, t, star, pr, newP)
+	+b.ARTICLE.product-item(href="#")
+		+e.top-wrap
+			.new.left-line NEW
+			+linksCard
+		+e.img-wrap: .img-wrap-center
+			+img(`img/prod-${i}.jpg`)
 		+e.caption
-			+e.title!= t
-			+e.text!= p
-			+e.price!= pr
-			+e.btn(href='#')
+			+e.title.ls-6!= t
+			+e.rew-wrap
+				.reviews__stars(data-star=`${star}`)
+					+icon('star')
+					+icon('star')
+					+icon('star')
+					+icon('star')
+					+icon('star')
+				+e.msg
+					+icon('message')
+					| 12
+			if newP
+				+e.price-wr
+					+e.price.price_old!= pr
+					span.fw-600= newP
+			if !newP
+				+e.price-wr
+					+e.price.fw-600!= pr
+			+e.btn.btn.btn-secondary(href='#'): +icon('cart')
 	// /.product-item
 
 mixin sCatalog(h2)
 	// start sCatalog
 	+b.sCatalog.section&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sCatalog
-				p Выкупаем проблемные автомобили в день обращения
+			+img(`img/svg/catalog-l.svg`).catalog-bg.catalog-l
+			+img(`img/svg/catalog-r.svg`).catalog-bg.catalog-r
+			+e.top
+				+e.top-btns
+					+e.btn.btn.btn-secondary(href='#') New
+					+e.btn.btn(href='#') Bestsellers
+					+e.btn.btn(href='#') Best prices
+					+img(`img/svg/girl.svg`).girl
 
 			+e.row.row
-				- const wrapClass="col-3"
+				- const wrapClass="col-sm-6 col-lg-4 col-xl-3"
 				+e.col(class= wrapClass)
-					+product-item(`1`,``,``,``) 
+					+product-item(`1`,`Baby carriage Baby carriage`, 5, `€100`,`€90`) 
 				+e.col(class= wrapClass)
-					+product-item(`2`,``,``,``) 
+					+product-item(`2`,`Smart Owl`, 4, `€100`) 
 				+e.col(class= wrapClass)
-					+product-item(`3`,``,``,``) 
+					+product-item(`3`,`Baby monitor`, 4, `€100`) 
 				+e.col(class= wrapClass)
-					+product-item(`4`,``,``,``) 
+					+product-item(`4`,`Baby carriage`, 5, `€100`,`€90`) 
+				+e.col.col-sm-6.col-lg-8.col-xl-6.col-large
+					+product-item(`5`,`Sport truck`, 4, `€100`) 
 				+e.col(class= wrapClass)
-					+product-item(`5`,``,``,``) 
+					+product-item(`6`,`Baby kitchen`, 4, `€1000`,`€900`) 
 				+e.col(class= wrapClass)
-					+product-item(`6`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`7`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`8`,``,``,``) 
+					+product-item(`7`,`Mini Mouse`, 4, `€100`) 
 
 	// end sCatalog

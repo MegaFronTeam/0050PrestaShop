@@ -117,11 +117,12 @@ main {
   &:before {
     content: '';
     width: 200vw;
-    height: 768px;
+    height: 508px;
     position: absolute;
     top: rem(-20);
     @include media-breakpoint-up(lg) {
       top: rem(-120);
+      height: 768px;
     }
     left: -100vw;
     z-index: -1;
@@ -133,6 +134,9 @@ main {
     top: 0;
     z-index: -1;
     max-width: 20vw;
+    @include media-breakpoint-up(lg) {
+      top: rem(-100);
+    }
   }
 
   .hero-bg-1 {
@@ -225,7 +229,9 @@ main {
 	--bg-gutter-x: #{rem(20)};
 }
 
-
+.bg-green {
+	background: $green-600;
+}
 
 .image-source-link {
 	color: #98C3D1;
@@ -529,15 +535,19 @@ iframe {
   --bs-btn-color: white;
   --bs-btn-bg: #f9e920;
   --bs-btn-border-color: #f9e920;
-  --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #faec41;
-  --bs-btn-hover-border-color: #faeb36;
+  --bs-btn-hover-color: white;
+  --bs-btn-hover-bg: #{$yellow-500};
+  --bs-btn-hover-border-color: #{$yellow-500};
   --bs-btn-focus-shadow-rgb: 212, 198, 27;
-  --bs-btn-active-color: #000;
+  --bs-btn-active-color: white;
   --bs-btn-active-bg: #faed4d;
   --bs-btn-active-border-color: #faeb36;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
   --bs-btn-disabled-color: #000;
   --bs-btn-disabled-bg: #f9e920;
   --bs-btn-disabled-border-color: #f9e920;
+
+  &:hover {
+    box-shadow: 0 4px 10px 0 rgba(249, 233, 32, 0.4);
+  }
 }

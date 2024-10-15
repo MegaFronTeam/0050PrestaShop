@@ -2,10 +2,27 @@ mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-				+icon('telegram')
-				+iconC('telegram')
-			.row
-						
+			+e.slider--js
+				.swiper-wrapper
+					+e.slide.swiper-slide
+						+e.img-wrap(href='#'): +img(src="img/header-sl-4.png", alt="").img-bg
+					+e.slide.swiper-slide
+						+e.img-wrap(href='#'): +img(src="img/header-sl-2.png", alt="").img-bg
+						+e.img-wrap(href='#'): +img(src="img/header-sl-3.png", alt="").img-bg
+						+e.img-wrap(href='#'): +img(src="img/header-sl-1.png", alt="").img-bg
+					+e.slide.swiper-slide
+						+e.img-wrap(href='#'): +img(src="img/header-sl-4.png", alt="").img-bg
+					+e.slide.swiper-slide
+						+e.img-wrap(href='#'): +img(src="img/header-sl-2.png", alt="").img-bg
+						+e.img-wrap(href='#'): +img(src="img/header-sl-3.png", alt="").img-bg
+						+e.img-wrap(href='#'): +img(src="img/header-sl-1.png", alt="").img-bg
+					+e.slide.swiper-slide
+						+e.img-wrap(href='#'): +img(src="img/header-sl-4.png", alt="").img-bg
+					+e.slide.swiper-slide
+						+e.img-wrap(href='#'): +img(src="img/header-sl-2.png", alt="").img-bg
+						+e.img-wrap(href='#'): +img(src="img/header-sl-3.png", alt="").img-bg
+						+e.img-wrap(href='#'): +img(src="img/header-sl-1.png", alt="").img-bg
+			.swiper-nav.row
+				.col-auto: .swiper-pagination
+				.col-auto: +e.arr-wrap: +arrow
 	// end headerBlock

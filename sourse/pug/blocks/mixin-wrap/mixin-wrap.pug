@@ -74,3 +74,15 @@ mixin main
 		+img('img/svg/hero-bg-2.svg').hero-bg.hero-bg-2
 		if block
 			block
+
+
+mixin sectionTitle(title)
+	+b.section-title.title-icon: a(href='#')
+		h2= title
+		+e.icon-wrap: +icon('chevron-right')
+
+mixin linksCard
+	.links-card.links-card__links-wr
+		button.link-item(href='#'): +icon('share')
+		button.link-item(href='#'): +icon('compare')
+		button.link-item(href='#'): +icon('heart')

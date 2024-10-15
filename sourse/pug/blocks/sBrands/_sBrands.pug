@@ -1,0 +1,36 @@
+mixin sBrands(data)
+	// start sBrands
+	+b.SECTION.sBrands.bg-green.section#sBrands&attributes(attributes)
+		.container
+			+img('img/svg/clouds-title.svg').clouds
+			+img('img/svg/sBrands-l.svg').brands-img.brands-l
+			+img('img/svg/sBrands-r.svg').brands-img.brands-r
+			+sectionTitle('Brends')
+			+e.row.row
+				.col-md-4: +brandItem(1)
+				.col-md-4
+					+e.small-r.row
+						.col-6: +brandItem(2)
+						.col-6: +brandItem(3)
+						.col-6: +brandItem(4)
+						.col-6: +brandItem(5)
+				.col-md-4: +brandItem(6)
+				.col-md-4
+					+e.small-r.row
+						.col-6: +brandItem(7)
+						.col-6: +brandItem(8)
+						.col-6: +brandItem(9)
+						.col-6: +brandItem(10)
+				.col-md-4: +brandItem(11)
+				.col-md-4
+					+e.small-r.row
+						.col-6: +brandItem(12)
+						.col-6: +brandItem(13)
+						.col-6: +brandItem(14)
+						.col-6: +brandItem(15)
+
+	// end sBrands
+
+mixin brandItem(i)
+	+b.brand-item(href='#')
+		+img(src=`img/sBrand-${i}.png`, alt="")

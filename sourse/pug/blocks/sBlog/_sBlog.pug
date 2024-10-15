@@ -2,22 +2,26 @@ mixin sBlog(data)
 	// start sBlog
 	+b.SECTION.sBlog.section#sBlog&attributes(attributes)
 		.container
-			//- +b.section-title.text-center
-			//- 	h2 sBlog
-				
+			+sectionTitle('Blog')
 			+e.row.row
-				+e.col.col-lg-4: +blogCard(1, "Silicone toothbrush Dr. Brown's for babies")
-				+e.col.col-lg-4: +blogCard(2, "Silicone toothbrush Dr. Brolicone toothbrush Dr. Brown's for babies")
-				+e.col.col-lg-4: +blogCard(3, "Silicone toothbrush Dr. Brown's for babies")
-				+e.col.col-lg-8: +blogCard(4, "Silicone toothbrush Dr. Brown's for babies")
-				+e.col.col-lg-4: +blogCard(5, "Silicone toothbrush Dr. Brown's for babies")
+				+e.col.col-lg-4
+					+blogCard(1, "Silicone toothbrush Dr. Brown's for babies")
+				+e.col.col-lg-4
+					+blogCard(2, "Silicone toothbrush Dr. Brolicone toothbrush Dr. Brown's for babies")
+				+e.col.col-lg-4
+					+blogCard(3, "Silicone toothbrush Dr. Brown's for babies")
+				+e.col.col-lg-8
+					+blogCard(4, "Silicone toothbrush Dr. Brown's for babies")
+				+e.col.col-lg-4
+					+blogCard(5, "Silicone toothbrush Dr. Brown's for babies")
 	// end sBlog
 
 mixin blogCard(i, title)
 	+b.blog-card(href='#')
 		+e.img-wrap: +img(`img/sBlog-${i}.png`).img-bg
 		+e.wrap
-			+e.title.title.left-line.ls-4=title
+			+e.title.title.ls-4= title
 			+e.bottom.ls-6
-				.text.fw-700.text-purple Read more
+				.text.fw-700.text-purple.left-line Read more
 				.date.text-disabled 12.07.2020
+			+linksCard

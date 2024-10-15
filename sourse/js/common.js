@@ -49,15 +49,35 @@ function eventHandler() {
 		watchOverflow: true,
 	});
 
-	const swiper4 = new Swiper(".sBanners__slider--js", {
-		// slidesPerView: 5,
-		...defaultSl,
-		slidesPerView: "auto",
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
+  const headerSwiper = new Swiper(".headerBlock__slider--js", {
+
+		slidesPerView: 1,
+		spaceBetween: 10,
+    // observeParents: true,
+		navigation: {
+			nextEl: ".headerBlock .swiper-button-next",
+			prevEl: ".headerBlock .swiper-button-prev",
+		},
+    // grid: {
+    //   rows: 2,
+    // },
+		pagination: {
+			el: '.headerBlock .swiper-pagination',
+			type: 'bullets',
+			clickable: true, 
+		},
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        spaceBetween: 24,
+        slidesPerView: 2,
+      //   centeredSlides: true,
+      //   initialSlide: 1,
+      //   spaceBetween: 0,
+      }
+    }
 	});
 }
 if (document.readyState !== "loading") {

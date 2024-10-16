@@ -76,10 +76,60 @@
 	@include media-breakpoint-up(lg) {}
 
 	@include media-breakpoint-up(md) {}
+  
+  .swiper-pagination-bullet {
+    width: 20px;
+    height: 2px;
+    margin-left: rem(4);
+    margin-right:  rem(4);
+    border-radius: 0;
+    background-color: $teal-300;
+    opacity: .4;
+    @include media-breakpoint-up(md) {
+      width: 88px;
+      margin-left: rem(2);
+      margin-right:  rem(22);
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background-color: $teal-700;
+    opacity: 1;
+  }
 
+  .swiper-pagination-bullet:hover {
+    opacity: 1;
+  }
+
+  .swiper-button-hand {
+    position: relative;
+    left: 0;
+    right: 0;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: calc(100% + 18px);
+      height: calc(100% + 18px);
+      border-radius: 100%;
+      border: 1px solid $secondary;
+      opacity: 0;
+      @include mt;
+      z-index: 5;
+  
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
 }
 
-// end.headerBlock
 .swiper-button-hand {
   z-index: 5;
   --swiperBorderColorDef: #{$secondary};
@@ -88,67 +138,16 @@
   --swiperArrowSize: #{rem(32)};
   --swiperBgDefHover: #{$secondary};
   box-shadow: 1px 1px 2px 0 rgba(55, 84, 170, 0.2);
-  position: static;
   @include media-breakpoint-up(lg) {
     --swiperArrowSize: #{rem(40)};
   }
-
   display: flex;
   justify-content: center;
   align-items: center;
+
   .icon {
     font-size: rem(20);
     color: $white;
-    // stroke-width: 1px;
-    // stroke: $indigo;
   }
 
-  position: relative;
-  left: 0;
-  right: 0;
-  &:before {
-    content: '';
-    display: inline-block;
-    width: calc(100% + 18px);
-    height: calc(100% + 18px);
-    border-radius: 100%;
-    border: 1px solid $secondary;
-    opacity: 0;
-    @include mt;
-    z-index: 5;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  }
-
-  &:hover {
-    &:before {
-      opacity: 1;
-    }
-  }
-}
-
-.swiper-pagination-bullet {
-  width: 20px;
-  height: 2px;
-  margin-left: rem(4);
-  margin-right:  rem(4);
-  border-radius: 0;
-  background-color: $teal-300;
-  opacity: .4;
-  @include media-breakpoint-up(md) {
-    width: 88px;
-    margin-left: rem(2);
-    margin-right:  rem(22);
-  }
-}
-.swiper-pagination-bullet-active {
-  background-color: $teal-700;
-  opacity: 1;
-}
-
-.swiper-pagination-bullet:hover {
-  opacity: 1;
 }

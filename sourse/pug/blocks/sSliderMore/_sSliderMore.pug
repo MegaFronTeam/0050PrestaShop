@@ -1,0 +1,27 @@
+mixin sSliderMore(title)
+	// start sSliderMore
+	+b.SECTION.sSliderMore.section#sSliderMore&attributes(attributes)
+		.container
+			+b.section-title.ls-4
+				h4=title
+			+e.slider--js
+				+arrow
+				.wrap: .swiper-wrapper
+					+e.slide.swiper-slide
+						+product-item(`2`,`Smart Owl`, 4, `€100`)
+					+e.slide.swiper-slide
+						+product-item(`7`,`Mini Mouse`, 4, `€100`) 
+					+e.slide.swiper-slide
+						+product-item(`2`,`Smart Owl`, 4, `€100`)
+					+e.slide.swiper-slide
+						+product-item(`6`,`Baby kitchen`, 4, `€1000`,`€900`) 
+					+e.slide.swiper-slide
+						+product-item(`2`,`Smart Owl`, 4, `€100`)
+					+e.slide.swiper-slide
+						+product-item(`7`,`Mini Mouse`, 4, `€100`) 
+					+e.slide.swiper-slide
+						+product-item(`2`,`Smart Owl`, 4, `€100`)
+					+e.slide.swiper-slide
+						+product-item(`6`,`Baby kitchen`, 4, `€1000`,`€900`)
+			.swiper-pagination
+	// end sSliderMore

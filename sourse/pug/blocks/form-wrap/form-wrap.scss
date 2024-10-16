@@ -46,6 +46,11 @@
 input[type="number"] {
 	-moz-appearance: textfield;
 }
+.form-check-input {
+  &:focus {
+    box-shadow: none;
+  }
+}
 
 select::-ms-expand {
 	display: none;

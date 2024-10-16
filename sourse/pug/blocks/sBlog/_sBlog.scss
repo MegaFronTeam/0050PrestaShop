@@ -35,7 +35,7 @@
 	min-height: 100%;
 	background: #FFFFFF;
   border: 1px solid $teal-400;
-	border-radius: 30px;
+	border-radius: $border-radius;
 	overflow: hidden;
 	position: relative;
 
@@ -103,7 +103,11 @@
     padding: rem(6) rem(24);
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
     border-radius: 0 0 0 30px;
-    opacity: 0;
+    @include media-breakpoint-up(md) {
+      @media screen {
+        opacity: 0;
+      }
+    }
   }
 
   &:hover {

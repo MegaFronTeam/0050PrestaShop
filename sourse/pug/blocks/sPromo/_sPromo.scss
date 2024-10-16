@@ -19,12 +19,12 @@
     display: inline-block;
     height: rem(260);
     width: 100%;
-    border-radius: 30px;
+    border-radius: $border-radius;
     &:hover {
-      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.25);
+      box-shadow: $box-shadow;
     }
     @include media-breakpoint-down(md) {
-      @include block(260/392)
+      @include block(260,392)
     }
 
     img {

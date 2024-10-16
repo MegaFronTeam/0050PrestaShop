@@ -1,0 +1,111 @@
+mixin sCategories(data)
+	// start sCategories
+	+b.SECTION.sCategories.wrap-bg.section#sCategories&attributes(attributes)
+		.container
+			.inner-bg
+				+breadcrumb1('Toys')
+				+e.filters
+					h3 Toys
+					.radio-wrap
+						+in-c('radio','For boys')(checked)
+						+in-c('radio','For girls')
+					.ranges
+						+rangeAge(0,16)
+						+rangePrice(0,100)
+					button.btn.btn-secondary Search
+				+e.row.row
+					- const wrapClass="col-lg-6"
+					+e.col(class= wrapClass)
+						+categCard('Constructors', 1)
+							ul
+								li: a(href='#') LEGO
+								li: a(href='#') Block
+								li: a(href='#') Magnetic
+								li: a(href='#') Metal
+					+e.col(class= wrapClass)
+						+categCard('Dolls', 2)
+							ul
+								li: a(href='#') LEGO
+								li: a(href='#') Block
+					+e.col(class= wrapClass)
+						+categCard('Constructors', 3)
+							ul
+								li: a(href='#') LEGO
+								li: a(href='#') Block
+								li: a(href='#') Magnetic
+								li: a(href='#') Metal
+					+e.col(class= wrapClass)
+						+categCard('Constructors', 4)
+							ul
+								li: a(href='#') LEGO
+								li: a(href='#') Block
+								li: a(href='#') Magnetic
+								li: a(href='#') Metal
+					+e.col(class= wrapClass)
+						+categCard('Constructors', 5)
+							ul
+								li: a(href='#') LEGO
+					+e.col(class= wrapClass)
+						+categCard('Constructors', 6)
+							ul
+								li: a(href='#') LEGO
+								li: a(href='#') Block
+								li: a(href='#') Magnetic
+								li: a(href='#') Metal
+					+e.col(class= wrapClass)
+						+categCard('Dolls', 7)
+							ul
+								li: a(href='#') LEGO
+								li: a(href='#') Block
+								li: a(href='#') Magnetic
+								li: a(href='#') Metal
+					+e.col(class= wrapClass)
+						+categCard('Constructors', 8)
+							ul
+								li: a(href='#') LEGO
+								li: a(href='#') Block
+								li: a(href='#') Magnetic
+								li: a(href='#') Metal
+					+e.col(class= wrapClass)
+						+categCard('Constructors', 9)
+							ul
+								li: a(href='#') LEGO
+								li: a(href='#') Block
+								li: a(href='#') Magnetic
+								li: a(href='#') Metal
+					+e.col(class= wrapClass)
+						+categCard('Constructors', 10)
+							ul
+								li: a(href='#') LEGO
+								li: a(href='#') Block
+								li: a(href='#') Magnetic
+								li: a(href='#') Metal
+					+e.col(class= wrapClass)
+						+categCard('Dolls', 11)
+							ul
+								li: a(href='#') LEGO
+								li: a(href='#') Block
+								li: a(href='#') Magnetic
+								li: a(href='#') Metal
+					+e.col(class= wrapClass)
+						+categCard('Constructors', 12)
+							ul
+								li: a(href='#') LEGO
+								li: a(href='#') Block
+								li: a(href='#') Magnetic
+								li: a(href='#') Metal
+	// end sCategories
+
+mixin categCard(t, i)
+	+b.categ-card
+		.row
+			.col-12.col-sm-6: .descr-wrap
+				.wrap
+					+e.title.ls-4.left-line.fw-500= t
+					if block
+						block
+				+e.categories.ls-6.fw-700(href='#') All categories
+					+icon('chevron-right')
+			.col.col-sm-6
+				.img-wrap-center
+					+img(`img/sCategories-${i}.png`)

@@ -47,6 +47,10 @@ mixin page-head(t,...items)
 
 			h1= t
 
+mixin breadcrumb1(...items)
+	+breadcrumb('Main',...items)
+
+
 mixin parts(elem)
 	script.
 		addBlock(`#{elem}`)
@@ -86,3 +90,42 @@ mixin linksCard
 		button.link-item(href='#'): +icon('share')
 		button.link-item(href='#'): +icon('compare')
 		button.link-item(href='#'): +icon('heart')
+
+mixin rangeAge(c1, c2)
+	+b.range-wrap--age.price_slider_amount&attributes(attributes)
+		.title Age from #[span.range-from #{c1}] to #[span.range-to #{c2}] years
+		input.range-slider.slider-js(type='text'  data-min=c1  data-max=c2)
+
+mixin rangePrice(c1, c2, fromTxt='От', toTxt='До',)
+	+b.range-wrap--age.price_slider_amount&attributes(attributes)
+		.title Price from #[span.range-from #{c1}]#[span €] to #[span.range-to #{c2}]#[span €]
+		input.range-slider.slider-js(type='text'  data-min=c1  data-max=c2)
+
+mixin product-item(i, t, star, pr, newP)
+	+b.ARTICLE.product-item(href="#")
+		+e.top-wrap
+			.new.left-line NEW
+			+linksCard
+		+e.img-wrap: .img-wrap-center
+			+img(`img/prod-${i}.jpg`)
+		+e.caption
+			+e.title.ls-6!= t
+			+e.rew-wrap
+				.reviews__stars(data-star=`${star}`)
+					+icon('star')
+					+icon('star')
+					+icon('star')
+					+icon('star')
+					+icon('star')
+				+e.msg
+					+icon('message')
+					| 12
+			if newP
+				+e.price-wr
+					+e.price.price_old!= pr
+					span.fw-600= newP
+			if !newP
+				+e.price-wr
+					+e.price.fw-600!= pr
+			+e.btn.btn.btn-secondary(href='#'): +icon('cart')
+	// /.product-item

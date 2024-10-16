@@ -495,7 +495,6 @@ iframe {
 // 	--bs-btn-color: #{$body-color};
 // }
 
-.btn,
 .form-control,
 .form-select{
 	box-shadow: none !important;
@@ -550,4 +549,55 @@ iframe {
   &:hover {
     box-shadow: 0 4px 10px 0 rgba(249, 233, 32, 0.4);
   }
+}
+
+.btn-primary {
+  --bs-btn-color: #{$teal-700};
+  --bs-btn-bg: #{$teal-100};
+  --bs-btn-border-color: #{$teal-100};
+  --bs-btn-hover-color: #{$teal-600};
+  --bs-btn-hover-bg: #{$teal-100};
+  --bs-btn-hover-border-color: #{$teal-100};
+  letter-spacing: 0.07em;
+  
+  --bs-btn-active-color: #{$teal-700};
+  --bs-btn-active-bg: #{$teal-100};
+  --bs-btn-active-border-color: #{$teal-100};
+
+  &:hover {
+    box-shadow: 0 4px 10px 0 rgba(163, 230, 232, 0.4);
+  }
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #48cdd1;
+  --bs-btn-border-color: #48cdd1;
+  --bs-btn-hover-color: #{$teal-600};
+  --bs-btn-hover-bg: #{$teal-100};
+  --bs-btn-hover-border-color: #{$teal-100};
+  --bs-btn-focus-shadow-rgb: 72, 205, 209;
+  --bs-btn-active-color: #{$teal-600};
+}
+
+.rm-btn-js {
+	cursor: pointer;
+	display: inline-block;
+
+	span:first-child{
+		display: inline-block;
+	}
+
+	span:last-child{
+		display: none;
+	}
+
+	&.active{
+		span:first-child{
+			display: none;
+		}
+
+		span:last-child{
+			display: inline-block;
+		}
+	}
 }

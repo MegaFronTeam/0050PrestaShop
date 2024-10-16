@@ -29,3 +29,145 @@ mixin sCatalog(h2)
 					+product-item(`7`,`Mini Mouse`, 4, `€100`) 
 
 	// end sCatalog
+mixin sCatalog2(h2)
+	// start sCatalog
+	+b.sCatalog.wrap-bg.section#Catalog2&attributes(attributes)
+		.container: .inner-bg
+			+breadcrumb1('Toys', 'Constructors')
+			+e.col-nav.row
+				.col-auto: h3 Constructors
+				.col-lg-9
+					+e.nav-sort
+						.small.fw-700.res.ls-4 125 Results
+						.sorts
+							+input("Price High - Low",'select','Sort by:')
+							//- +input("Price High - Low",'select','Sort by:')
+							select
+								option 10
+								option 20
+								option 30
+								option 40
+
+			+e.row.row
+				+e.col-aside.col-lg-3
+					+sCatalogSidebar
+					+e.filter-btn.BUTTON.btn.btn-primary.d-lg-none.filter-btn-js
+						span Show filters
+						span Hide filters
+				.col-lg-9
+					+e.items-content.row
+						- const wrapClass="col-sm-6 col-xl-4"
+						+e.col(class= wrapClass)
+							+product-item(`1`,`Baby carriage`, 5, `€100`,`€90`) 
+						+e.col(class= wrapClass)
+							+product-item(`2`,`Smart Owl`, 4, `€100`) 
+						+e.col(class= wrapClass)
+							+product-item(`7`,`Mini Mouse`, 4, `€100`) 
+						+e.col(class= wrapClass)
+							+product-item(`3`,`Baby monitor`, 4, `€100`) 
+						+e.col(class= wrapClass)
+							+product-item(`1`,`Baby carriage`, 5, `€100`,`€90`) 
+						+e.col(class= wrapClass)
+							+product-item(`2`,`Smart Owl`, 4, `€100`) 
+						+e.col(class= wrapClass)
+							+product-item(`7`,`Mini Mouse`, 4, `€100`) 
+						+e.col(class= wrapClass)
+							+product-item(`3`,`Baby monitor`, 4, `€100`) 
+						+e.col(class= wrapClass)
+							+product-item(`1`,`Baby carriage`, 5, `€100`,`€90`)
+					+e.link.btn.btn-link.ls-6
+						+icon('more')
+						| Show more
+					+pugin()
+
+mixin sCatalogSidebar()
+	+b.sidebar--js
+		+ddGroup.mb-24
+			+ddGroupItem('Category', 'active')
+				+in-c1('checkbox', 'LEGO')(checked)
+					.num 168
+				+in-c1('checkbox', 'Block')
+					.num 34
+				+in-c1('checkbox', 'Wooden')(checked)
+					.num 168
+				+in-c1('checkbox', 'Electronic')
+					.num 31
+				+in-c1('checkbox', 'Magnetic')
+					.num 168
+				+in-c1('checkbox', 'Metal')
+					.num 168
+				+in-c1('checkbox', 'Glowing')(disabled)
+					.num 0
+				+in-c1('checkbox', 'Sets')
+					.num 5
+				+e.btn.btn.btn-primary.show-all.BUTTON Show all
+		+ddGroup.mb-24
+			+ddGroupItem('Brand')
+				+in-c1('checkbox', 'LEGO')(checked)
+					.num 168
+				+in-c1('checkbox', 'LEGO2')
+					.num 34
+				+in-c1('checkbox', 'Wooden')(checked)
+					.num 168
+				+in-c1('checkbox', 'Electronic')
+					.num 31
+				+in-c1('checkbox', 'Magnetic')
+					.num 168
+		+ddGroup.mb-24
+			+ddGroupItem('Price, € ', 'active')
+				+range(10,599)
+			+ddGroupItem('Ages', 'active')
+				+range(0,15)
+			+ddGroupItem('Discount', 'active')
+				+in-c1('checkbox', 'Discount')(checked)
+			+ddGroupItem('Rating', 'active')
+				+in-c1('radio', '')(checked)
+					.reviews__stars(data-star=5)
+						+icon('star')
+						+icon('star')
+						+icon('star')
+						+icon('star')
+						+icon('star')
+					.num 168
+				+in-c1('radio', '')
+					.reviews__stars(data-star=4)
+						+icon('star')
+						+icon('star')
+						+icon('star')
+						+icon('star')
+						+icon('star')
+					.num 5
+				+in-c1('radio', '')
+					.reviews__stars(data-star=3)
+						+icon('star')
+						+icon('star')
+						+icon('star')
+						+icon('star')
+						+icon('star')
+					.num 12
+				+in-c1('radio', '')(disabled)
+					.reviews__stars(data-star=2)
+						+icon('star')
+						+icon('star')
+						+icon('star')
+						+icon('star')
+						+icon('star')
+					.num 0
+				+in-c1('radio', '')
+					.reviews__stars(data-star=1)
+						+icon('star')
+						+icon('star')
+						+icon('star')
+						+icon('star')
+						+icon('star')
+					.num 12
+				+in-c1('radio', 'Any')
+		+ddGroup.mb-24
+			+ddGroupItem('Gender', 'active')
+				+in-c1('checkbox', 'For boys')(checked)
+					.num 168
+				+in-c1('checkbox', 'For girls')
+					.num 34
+		+e.btns-wrap
+			+e.btn.btn.btn-primary.show-all.BUTTON Show all
+			+e.btn.btn.btn-outline-primary.show-all.BUTTON Clear filter

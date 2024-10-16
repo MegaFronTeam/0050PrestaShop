@@ -1,4 +1,11 @@
 // start .sCatalog
+
+#Catalog2 {
+  
+  @include media-breakpoint-up(lg) {
+    --sPB: #{rem(0)};
+  }
+}
 .sCatalog {
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
@@ -87,11 +94,11 @@
 
   .btn {
     --bs-btn-padding-x: #{rem(10)};
-    border: none;
   }
 
-  &__col .product-item {
-    &__img-wrap {
+  &__top-btns {
+    .btn {
+      border: none;
     }
   }
 
@@ -104,6 +111,93 @@
     }
   }
 
+  &__link {
+    width: 100%;
+    color: $teal-600;
+    .icon {
+      margin-right: rem(10);
+    }
+    &:hover {
+      background: $teal-100;
+      color: $teal-600;
+    }
+    margin-bottom: rem(20);
+  }
+
+  &__items-content {
+		--bs-gutter-y: var(--bs-gutter-x);
+    margin-bottom: rem(28);
+  }
+
+  &__col-nav {
+    justify-content: space-between;
+    margin-bottom: rem(32);
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: calc(100% - var(--bs-gutter-x));
+      height: 1px;
+      left: calc(var(--bs-gutter-x) / 2);
+      bottom: -10px;
+      background: $gray-200;
+    }
+
+    h3 {
+      margin-top: rem(4);
+    }
+  }
+
+  .sorts {
+    display: flex;
+    gap: rem(22);
+    @include media-breakpoint-down(md) {
+      flex-wrap: wrap;
+      gap: rem(10);
+    }
+  }
+
+  &__nav-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include media-breakpoint-down(md) {
+      flex-wrap: wrap;
+      gap: rem(10);
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      background: $gray-100;
+      padding: rem(8) rem(20);
+      padding-right: 0;
+      border-radius: 5px;
+    }
+
+    .sCatalog__input-title {
+      font-weight: 700;
+      font-size: 14px;
+      text-wrap: nowrap;
+      color: $gray-700;
+    }
+  }
+
+  .res {
+    color: $gray-700;
+  }
+
+  .mb-24 {
+    margin-bottom: rem(24);
+  }
+
+	&__filter-btn {
+		@extend .rm-btn-js !optional;
+
+		width: 100%;
+	}
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -113,3 +207,182 @@
 	@include media-breakpoint-down(xl) {}
 } // end.sCatalog
 
+.form-select, .select2-container--default .select2-selection {
+  appearance: none;
+  background: none;
+  background-image: none;
+  border: none;
+  font-size: 14px;
+  padding-left: rem(18);
+}
+
+select {
+  background: $gray-100;
+  padding: rem(14) rem(24);
+  padding-right: rem(42);
+  border-radius: 5px;
+  border: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 9L12 15L6 9' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right  18px center;
+  font-weight: 700;
+  font-size: 14px;
+  color: $gray-700;
+  background-size: 24px 24px;
+  &:focus,
+  &:focus-visible {
+    border: none;
+    outline: 0;
+  }
+
+}
+
+.select2-container--default .select2-selection:focus {
+  border-color: transparent;
+  box-shadow: none;
+  outline: 0;
+}
+.select2-dropdown {
+  border: 1px solid var(--bs-border-color) !important;
+  border-radius: rem(4) !important;
+}
+
+.sidebar {
+  margin-bottom: rem(20);
+	@include media-breakpoint-down(lg) {
+    display: none;
+  }
+	@include media-breakpoint-up(lg) {
+    display: block;
+  }
+  .custom-input {
+    margin-bottom: rem(5.4);
+    .wrap {
+      display: flex !important;
+      justify-content: space-between;
+      color: $gray-700;
+    }
+    .num {
+      display: inline;
+      color: $primary;
+    }
+
+    input:disabled {
+      border-color: $gray-600;
+    }
+    input:disabled ~ .wrap {
+      color: $gray-600;
+      .num {
+        color: $gray-600;
+      }
+      .icon {
+        fill: $gray-600;
+        opacity: .4;
+      }
+    }
+  }
+  .show-all {
+    --bs-btn-padding-y:#{rem(5)};
+  }
+  &__btns-wrap {
+    @include media-breakpoint-up(xl) {
+      width: calc(100% - 58px);
+    }
+    margin: auto;
+    .btn {
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: rem(24);
+      }
+    }
+  }
+	@include media-breakpoint-up(xl) {
+    margin-right: rem(20);
+  }
+  .icon-star {
+    margin-left: rem(-4);
+  }
+}
+
+.dd-group {
+  // max-width: rem(860);
+  background: $gray-100;
+  // padding: rem(24);
+  --pad-left: 24px;
+	@include media-breakpoint-only(lg) {
+    --pad-left: 14px;
+  }
+  .wrap.active {
+    position: relative;
+    &:after {
+      content: '';
+      width: 7px;
+      height: 7px;
+      display: inline-block;
+      background: $teal-600;
+      border-radius: 50%;
+      margin-left: rem(8);
+      transform: translateY(-3px);
+    }
+  }
+
+  &__head {
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 112%;
+    letter-spacing: 0.06em;
+
+    display: flex;
+    gap: rem(10);
+    justify-content: space-between;
+    align-items: center;
+    color: $gray-700;
+    padding: rem(24) var(--pad-left);
+    // padding: rem(24) var(--pad-left);
+
+    &:after {
+      @include mt;
+      content: '';
+      display: inline-block;
+      width: rem(24);
+      height: rem(24);
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 9L12 15L6 9' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      margin-left: rem(4);
+      vertical-align: middle;
+      transform: rotate(180deg);
+    }
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: rem(-8);
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &.active {
+      .dd-group__head:after {
+        transform: rotate(0deg);
+      }
+    }
+  }
+  &__content {
+    padding: 0 var(--pad-left) rem(24) var(--pad-left);
+    margin-top: rem(-4);
+    // line-height: 1;
+  }
+  .btn {
+    width: 100%;
+    margin-top: rem(10);
+  }
+}
+
+.dd-group__content {
+  display: none;
+  &.active {
+    display: block;
+  }
+}

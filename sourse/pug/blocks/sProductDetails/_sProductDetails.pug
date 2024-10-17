@@ -1,0 +1,211 @@
+mixin sProductDetails(data)
+	// start sProductDetails
+	+b.SECTION.sProductDetails.section#sProductDetails&attributes(attributes)
+		.container: .inner-bg
+			+breadcrumb1('Toys', 'Educational toys')
+			+e.row.row
+				.col-lg-8
+					+e.col-nav.ls-4
+						h3 Fisher Price Monster Toy Green
+						.product-item__rew-wrap
+							.reviews__stars(data-star=`4`)
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							.product-item__msg
+								+icon('message')
+								| 12
+					.w: +e.row-sl.row
+						.col-sl.col-md-2: +e.thumb-wrap
+							.swiper.sProdCard-thumb-js
+								.swiper-wrapper
+									+sProdCardThumb('04')
+									+sProdCardThumb('01')
+									+sProdCardThumb('03')
+									+sProdCardThumb('04')
+									+sProdCardThumb('05')
+									+sProdCardThumb('06')
+									+sProdCardThumb('07')
+						.col-sl.col-md-10: +e.slider-wrap
+							.badge-wrap: .badge 20%
+							.swiper.sProdCard-slider-js
+								.swiper-wrapper
+									+sProdCardSlide('04')
+									+sProdCardSlide('01')
+									+sProdCardSlide('03')
+									+sProdCardSlide('04')
+									+sProdCardSlide('05')
+									+sProdCardSlide('06')
+									+sProdCardSlide('07')
+					+e.item-done.item-done_gray.item-done_big.d-flex(href='#')
+						.wrapper.ls-6
+							| All products of #[span Fischer Price] brand
+							+icon('chevron-right')
+						+img('img/sBrand-11.png').brand
+					+tabsGroup
+				.col-lg-4: .wrap
+					+b.product-item
+						.top-wrap
+							.cats
+								.cat NEW
+								.cat SALE
+							+linksCard
+						.small Article: 5013 4569
+						.prices-wrap
+							.prices
+								.price_old €130
+								span -€10
+								+e.new-price.fw-700 €120
+							+alarm
+					+e.item.d-flex
+						+e.btn.btn.BUTTON.btn-secondary Add to basket
+						+addblock
+					+e.item-done.item-done_gray
+						+icon('done')
+						| In Stock
+					+e.item-done
+						.small Age Suitability: 8 Years +
+						.list
+							.list__item
+								+icon('market')
+								p Pick up from our store from 28.08
+							.list__item
+								+icon('point')
+								p Pick up from Post office or Pick Up point, from 28.08
+							.list__item
+								+icon('delivery')
+								p We will deliver from 29.08, #[span free] of charge
+					+e.slider--js
+						.s-wrap: .swiper-wrapper
+							+e.slide.swiper-slide
+								.img-wrap(href='#'): +img(src="img/promo-1.png", alt="")
+							+e.slide.swiper-slide
+								.img-wrap(href='#'): +img(src="img/promo-2.png", alt="")
+							+e.slide.swiper-slide
+								.img-wrap(href='#'): +img(src="img/promo-3.png", alt="")
+						.sSliderMore.swiper-pagination
+
+	// end sProductDetails
+
+
+mixin sProdCardSlide(imgNum)
+	.swiper-slide
+		+e.s-img(href=`img/product-${imgNum}.png` data-fancybox='sProdCardSlide')
+			img(loading="lazy" src=`img/product-${imgNum}.png` alt="")
+
+mixin sProdCardThumb(imgNum)
+	.swiper-slide
+		.slide-item-1
+			img(loading="lazy" src=`img/product-${imgNum}.png` alt="")
+
+mixin alarm
+	.timer
+		+icon('alarm')
+		.time.ls-7 2d:4h:40m:25s
+
+
+mixin tabsGroup
+	.tabs
+		+e.swiper--js
+			.tabs__caption.swiper-wrapper
+				.tabs__btn.active.swiper-slide
+					.title Description
+				.tabs__btn.swiper-slide
+					.title Characteristics
+				.tabs__btn.swiper-slide
+					.title Reviews
+			.tabs__content.active
+				.top
+					h4 Reviews
+					.product-item__rew-wr
+						.small.text Product rating
+						.reviews__stars(data-star=`4`)
+							+icon('star')
+							+icon('star')
+							+icon('star')
+							+icon('star')
+							+icon('star')
+					.btn.btn-secondary(href='#') Write review
+				.top.top2
+					.small 1–3 of 9 Reviews
+					+input("Most Recent",'select','Sort by:')
+				.reviews__stars(data-star=`4`).stars-small.mb-39
+					+icon('star')
+					+icon('star')
+					+icon('star')
+					+icon('star')
+					+icon('star')
+				.text.small.mb-30
+					p Pros
+					p Мощность, функционал, холодный воздух
+					p Cons
+					p Нет
+					p Review
+					p У меня очень густые волосы, обычный фен и фен - щётка просушивают мои волосы очень долго, поэтому задумалась о покупке мощного профессионального фена. Купив этот фен я не прогадала. Сушка занимает мало времени, много вариантов работы фена, холодный воздух действительно холодный, что мне встречается впервые. Я от него в восторге! Единственный недостаток, при укладке феном с брашингом из-за его габаритов и веса устают руки.
+				.author.text.small
+					span Jessica
+					| 12.09.2020
+			.tabs__content
+				.top
+					h4 Reviews
+					.product-item__rew-wr
+						.small.text Product rating
+						.reviews__stars(data-star=`4`)
+							+icon('star')
+							+icon('star')
+							+icon('star')
+							+icon('star')
+							+icon('star')
+					.btn.btn-secondary(href='#') Write review
+				.top.top2
+					.small 1–3 of 9 Reviews.stars-small
+					+input("Most Recent",'select','Sort by:')
+				.reviews__stars(data-star=`4`).mb-39
+					+icon('star')
+					+icon('star')
+					+icon('star')
+					+icon('star')
+					+icon('star')
+				.text.small.mb-30
+					p Pros
+					p Мощность, функционал, холодный воздух
+					p Cons
+					p Нет
+					p Review
+					p У меня очень густые волосы, обычный фен и фен - щётка просушивают мои волосы очень долго, поэтому задумалась о покупке мощного профессионального фена. Купив этот фен я не прогадала. Сушка занимает мало времени, много вариантов работы фена, холодный воздух действительно холодный, что мне встречается впервые. Я от него в восторге! Единственный недостаток, при укладке феном с брашингом из-за его габаритов и веса устают руки.
+				.author.text
+					span Jessica
+					| 12.09.2020
+			.tabs__content
+				.top
+					h4 Reviews
+					.product-item__rew-wr
+						.small.text Product rating
+						.reviews__stars(data-star=`4`)
+							+icon('star')
+							+icon('star')
+							+icon('star')
+							+icon('star')
+							+icon('star')
+					.btn.btn-secondary(href='#') Write review
+				.top.top2
+					.small 1–3 of 9 Reviews
+					+input("Most Recent",'select','Sort by:')
+				.reviews__stars(data-star=`4`).mb-39
+					+icon('star')
+					+icon('star')
+					+icon('star')
+					+icon('star')
+					+icon('star')
+				.text.small.mb-30
+					p Pros
+					p Мощность, функционал, холодный воздух
+					p Cons
+					p Нет
+					p Review
+					p У меня очень густые волосы, обычный фен и фен - щётка просушивают мои волосы очень долго, поэтому задумалась о покупке мощного профессионального фена. Купив этот фен я не прогадала. Сушка занимает мало времени, много вариантов работы фена, холодный воздух действительно холодный, что мне встречается впервые. Я от него в восторге! Единственный недостаток, при укладке феном с брашингом из-за его габаритов и веса устают руки.
+				.author.text
+					span Jessica
+					| 12.09.2020

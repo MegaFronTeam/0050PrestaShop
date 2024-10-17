@@ -109,6 +109,54 @@ function eventHandler() {
     });
   })
 
+   /* thumb slider */
+   let prodCardThumb = new Swiper(".sProdCard-thumb-js", {
+		slidesPerView: 3,
+		spaceBetween: 24,
+    breakpoints: {
+      768: {
+        slidesPerView: 4,
+        direction: "vertical",
+      },
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        direction: "vertical",
+      },
+      1200: {
+        slidesPerView: 5,
+        direction: "vertical",
+      }
+    }
+	});
+
+	let prodCardSlider = new Swiper(".sProdCard-slider-js", {
+		spaceBetween: 10,
+		thumbs: {
+			swiper: prodCardThumb,
+		},
+		loop: true,
+    centeredSlides: 'true'
+	}); //
+
+  /* prod swiper */
+  let prodSlider = new Swiper(".sProductDetails__slider--js .s-wrap", {
+		spaceBetween: 10,
+		slidesPerView: 1,
+		// loop: true,
+		pagination: {
+			el: '.sProductDetails__slider--js .swiper-pagination',
+			type: 'bullets',
+			clickable: true, 
+		},
+	}); //
+
+  const swiperTabs1 = new Swiper(".tabs__swiper--js", {
+		slidesPerView: "auto",
+		freeMode: true,
+		watchOverflow: true,
+	});
+
   $('.filter-btn-js').click(function () {
     $(this).toggleClass('active');
     $('.sidebar--js').slideToggle(function () {

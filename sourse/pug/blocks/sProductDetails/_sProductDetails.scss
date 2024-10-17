@@ -1,0 +1,422 @@
+// start .sProductDetails
+.sProductDetails {
+	// --sPT: #{rem()};
+	--sPB: #{rem(30)};
+	// --sTPB: #{rem()};
+
+	&__col-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(32);
+    position: relative;
+
+    flex-wrap: wrap;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: calc(100% );
+      height: 1px;
+      left: 0;
+      bottom: -10px;
+      background: $gray-200;
+    }
+  }
+
+  .sProdCard-thumb-js {
+    @include media-breakpoint-down(md) {
+      max-height: 80px;
+    }
+    @include media-breakpoint-up(md) {
+      width: rem(80);
+      margin-right: rem(100);
+      max-height: 400px;
+    }
+    @include media-breakpoint-up(xl) {
+      max-height: 500px;
+    }
+  }
+
+  .slide-item-1 {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__slider-wrap {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    .swiper  {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__row-sl {
+    display: flex;
+    margin-bottom: rem(22);
+    .col-sl {
+      max-height: inherit;
+    }
+  }
+
+  .sProdCard-slider-js {
+    @include media-breakpoint-up(lg) {
+      max-width: 84%;
+    }
+  }
+
+  &__s-img {
+    max-width: 100%;
+    margin: auto;
+    display: inline-block;
+    @include media-breakpoint-up(md) {
+      max-width: rem(428);
+    }
+    @include media-breakpoint-up(xl) {
+      max-width: rem(528);
+    }
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+
+  .badge-wrap {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    --b-width: 60px;
+    width: var(--b-width);
+    height: var(--b-width);
+    border-radius: 50%;
+    @include media-breakpoint-up(md) {
+      --b-width: 90px;
+    }
+
+    background: $purple;
+    border: 5px solid $white;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+
+    .badge {
+      font-size: 20px;
+      line-height: 171%;
+      letter-spacing: 0.04em;
+      color: $white;
+      @include media-breakpoint-up(md) {
+        font-size: 28px;
+      }
+    }
+  }
+
+  .wrap {
+    @include media-breakpoint-up(lg) {
+      margin-left: rem(20);
+    }
+  }
+
+  .product-item {
+    border: none;
+    cursor: unset;
+    background: $gray-100;
+    border-radius: 10px;
+    padding-bottom: rem(26);
+    &:hover {
+      box-shadow: none;
+    }
+
+    .prices-wrap {
+      display: flex;
+      gap: rem(16) rem(41);
+      flex-wrap: wrap;
+      margin-top: rem(40);
+    }
+
+    .small {
+      opacity: .6;
+      letter-spacing: 0.07em;
+    }
+
+    .top-wrap {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: rem(24);
+
+      .cat {
+        display: inline-block;
+        background: $white;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        min-width: 80px;
+        text-align: center;
+        color: $purple;
+        @include media-breakpoint-up(lg) {
+          font-size: rem(18);
+        }
+
+        &:not(:last-child) {
+          margin-right: rem(16);
+        }
+
+        position: relative;
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 4px;
+          height: 16px;
+          background: $teal-600;
+        }
+      }
+    }
+
+    &__new-price {
+      font-size: 28px;
+      letter-spacing: 0.04em;
+      opacity: .5;
+    }
+    span {
+      @include media-breakpoint-up(lg) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__item {
+    margin-top: rem(4);
+    margin-bottom: rem(20);
+    &.d-flex {
+      gap: rem(40);
+    }
+    .btn {
+      max-width: rem(192);
+      width: rem(192);
+      --bs-btn-padding-x: #{rem(20)};
+      font-size: rem(18);
+    }
+  }
+
+  &__item-done {
+    letter-spacing: 0.07em;
+    &.item-done_gray {
+      background: $gray-100;
+    }
+    &.item-done_big {
+      padding: rem(14) rem(40);
+    }
+
+    .wrapper {
+      font-size: rem(18);
+      font-family: $headings-font-family;
+
+      span {
+        color: $body-color;
+      }
+    }
+    &.d-flex {
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .brand {
+      max-width: 112px;
+      max-height: 51px;
+    }
+
+    .icon-chevron-right {
+      fill: $teal-600;
+      font-size: rem(24);
+      margin-left: rem(22);
+      transform: translateY(-1px);
+    }
+
+    margin-bottom: rem(18);
+
+    border-radius: 5px;
+    padding: rem(12) rem(24);
+    color: $gray-600;
+
+    .icon-done {
+      color: $green;
+      margin-right: rem(12);
+    }
+
+  }
+
+  .list {
+    padding-top: rem(24);
+    margin-top: rem(28);
+    border-top: 1px solid $gray-100;
+
+    &__item {
+      font-size: rem(14);
+      display: flex;
+      gap: rem(8);
+      &:not(:last-child) {
+        margin-bottom: rem(8);
+      }
+    }
+
+    .icon {
+      flex-shrink: 0;
+      transform: translateY(-5px);
+    }
+    span {
+      color: $green;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .s-wrap {
+    overflow: hidden;
+    margin-bottom: rem(16);
+    .img-wrap {
+      border-radius: 30px;
+      overflow: hidden;
+    }
+  }
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sProductDetails
+
+.timer {
+  color: $gray-600;
+  .icon {
+    margin-right: rem(6);
+    transform: translateY(-2px);
+  }
+
+  display: flex;
+}
+
+.tabs {
+  // display: flex;
+  position: relative;
+  z-index: 20;
+  max-width: rem(703);
+  @include media-breakpoint-up(lg) {
+    // gap: rem(100);
+  }
+  .tabs__btn {
+    color: $gray-700;
+    font-family: $headings-font-family;
+    font-size: 18px;
+    letter-spacing: 0.06em;
+    padding: 5px 0;
+    margin-bottom: rem(30);
+
+    &.active {
+      color: $teal-600;
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        background: $teal-600;
+        border-radius: 0 0 5px 5px;
+      }
+    }
+  }
+
+  .swiper-slide {
+    width: max-content !important;
+    margin-right: rem(48);
+  }
+
+  .text {
+    color: $gray-600;
+    line-height: 150%;
+    letter-spacing: 0.07em;
+    p {
+      margin-bottom: rem(8);
+      max-width: rem(600);
+    }
+  }
+  .author {
+    span {
+      font-weight: 700;
+      margin-right: rem(21);
+    }
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(32);
+  }
+  .top2 {
+    align-items: center;
+    margin-bottom: rem(16);
+  }
+  .mb-39 {
+    margin-bottom: rem(39);
+  }
+
+  .mb-30 {
+    margin-bottom: rem(30);
+  }
+  .stars-small {
+    .icon-star {
+      font-size: rem(14);
+    }
+  }
+
+  .btn {
+    max-width: rem(180);
+    width: rem(180);
+    --bs-btn-padding-x: #{rem(20)};
+    font-size: rem(18);
+  }
+  label {
+    display: flex;
+    align-items: center;
+    padding-right: 0;
+    border-radius: 5px;
+    width: max-content;
+    color: $gray-600;
+    & > span {
+      text-wrap: nowrap;
+      font-weight: 700;
+    }
+    span {
+      font-size: rem(14);
+      color: $gray-600 !important;
+    }
+    .form-select, .select2-container--default .select2-selection {
+      padding-right: rem(50);
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 9L12 15L6 9' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right  18px center;
+    }
+  }
+
+}

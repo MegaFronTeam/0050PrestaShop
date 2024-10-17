@@ -8,6 +8,13 @@
     --sPT: #{rem(40)};
     --sPB: #{rem(60)};
   }
+  &:not(:last-child) {
+    
+  @include media-breakpoint-up(lg) {
+    // --sPT: #{rem(40)};
+    --sPB: #{rem(10)};
+  }
+  }
 	&__row{
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};

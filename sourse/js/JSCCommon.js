@@ -52,6 +52,11 @@ class JSCCommon {
 				Fancybox.close();
 			});
 		});
+    Fancybox.bind("[data-fancybox]", {
+      autoFocus: false,
+      placeFocusBack: false,
+    });
+
 
 		document.addEventListener("click", event => {
 			let element = event.target.closest(link);

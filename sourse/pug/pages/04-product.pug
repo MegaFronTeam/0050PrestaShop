@@ -8,6 +8,7 @@ include ../blocks/sPromo/_sPromo.pug
 include ../blocks/sSliderMore/_sSliderMore.pug
 include ../blocks/sCategories/_sCategories.pug
 include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sProductDetails/_sProductDetails.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -22,6 +23,7 @@ block pagecontent
 	
 	+parts('header')
 	+main
+		+sProductDetails
 		+sSliderMore('Recently Viewed')
 		+sSliderMore('Related products')
 		

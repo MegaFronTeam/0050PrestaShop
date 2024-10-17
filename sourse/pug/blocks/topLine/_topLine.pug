@@ -22,6 +22,10 @@ mixin topLine2()
 			+e.row.row
 				.col
 					+e.logo(href='#'): +img(src="img/svg/logo-light.svg", alt="")
+				+e.search-col.col-auto.hide-ball.d-lg-none
+					+b.icon-btn--search.hide
+						+icon("search")
+					+b.search-wrap--js: +search()
 				.col-auto.d-none.d-md-block
 					+search
 					+navUser

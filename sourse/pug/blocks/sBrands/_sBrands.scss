@@ -8,15 +8,41 @@
     --sPB: #{rem(126)};
   }
 
-	&__row {
-		// --bs-gutter-x: #{rem()};
-		// --bs-gutter-y: #{rem()};
-	}
-  &__small-r {
+	&__grid {
+    gap: rem(10);
+    @include media-breakpoint-up(md) {
+      gap: var(--bs-gutter-x);
+    }
 
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    @include media-breakpoint-up(sm) {
+      grid-template-columns: repeat(6,1fr);
+    }
   }
-  .row {
-    --bs-gutter-y: var(--bs-gutter-x);
+
+  .brand-item {
+    @include media-breakpoint-down(sm) {
+      &:nth-child(5n - 4) {
+        // grid-row: span 2;
+        grid-column: span 2;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      &:nth-child(1) {
+        grid-row: span 2;
+        grid-column: span 2;
+      }
+      &:nth-child(7) {
+        grid-row: 1/ span 2;
+        grid-column: span 2 /-1;
+      }
+      &:nth-child(11) {
+        grid-row: 3/span 2;
+        grid-column: 3/span 2;
+      }
+    }
   }
 
   .container {

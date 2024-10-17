@@ -276,6 +276,25 @@ function eventHandler() {
 		});
 	});
 
+  /* search */
+  window.addEventListener("load", () => {
+    const btnSearch = document.querySelector('.icon-btn--search')
+    const wrapSearch = document.querySelector('.search-wrap--js')
+  
+    if (btnSearch) {
+      btnSearch.addEventListener('click', ()=> {
+        wrapSearch.classList.add('show')
+      })
+    }
+
+    document.addEventListener('click', (event) => {
+      if (!wrapSearch.contains(event.target) && !btnSearch.contains(event.target)) {
+        wrapSearch.classList.remove('show');
+      }
+    });
+  })
+
+
 }
 if (document.readyState !== "loading") {
 	eventHandler();

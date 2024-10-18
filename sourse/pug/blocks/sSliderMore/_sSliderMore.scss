@@ -28,12 +28,12 @@
 		
 	}
 	&__slider--js {
-    margin-bottom: rem(32);
     position: relative;
 	}
   .wrap {
     position: relative;
     width: 90%;
+    padding-bottom: rem(32);
     @include media-breakpoint-up(sm) {
       width: 70%;
     }

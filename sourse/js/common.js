@@ -138,8 +138,30 @@ function eventHandler() {
         slidesPerView: 5,
         direction: "vertical",
       }
+    },
+    on: {
+      init: function() {
+        setLastVisibleSlideOpacity(this);
+      },
+      slideChange: function() {
+        setLastVisibleSlideOpacity(this);
+      },
+      resize: function() {
+        setLastVisibleSlideOpacity(this);
+      }
     }
-	});
+  });
+
+  function setLastVisibleSlideOpacity(swiper) {
+    swiper.slides.forEach(slide => {
+      slide.style.opacity = '1';
+    });
+
+    const lastVisibleIndex = swiper.activeIndex + swiper.params.slidesPerView - 1;
+    if (lastVisibleIndex < swiper.slides.length - 1) {
+      swiper.slides[lastVisibleIndex].style.opacity = '0.5';
+    }
+  }
 
 	let prodCardSlider = new Swiper(".sProdCard-slider-js", {
 		spaceBetween: 10,

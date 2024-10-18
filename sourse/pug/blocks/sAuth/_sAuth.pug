@@ -1,0 +1,54 @@
+mixin sAuth(data)
+	// start sAuth
+	+b.SECTION.sAuth.section#sAuth&attributes(attributes)
+		.container
+			.inner-bg: .tabs
+				.section-title.text-center: h3 Log in to your account
+				+e.tabs-caption.tabs__caption
+					+e.tabs-btn.tabs__btn.active Log In
+					+e.tabs-btn.tabs__btn Registration
+				.tabs__content.active
+					.card
+						+form-wrap
+							+input('Enter your email', 'text', '')
+							+input('Enter your password', 'password', '')
+								.password.text-center: a(href="#") Forgot your password?
+							.btn-wrap.text-center
+								+e.btn.btn.btn-secondary.BUTTON(type="submit") Log In
+				.tabs__content
+					.card.card_sm
+						+form-wrap
+							+input('Enter your email', 'text', '').is-invalid
+								.invalid-feedback Some error
+							+input('Enter your password', 'password', '')
+							+input('Confirm password', 'password', '')
+							.btn-wrap.text-center
+								+e.btn.btn.btn-secondary.BUTTON(type="submit") Register
+	// end sAuth
+
+mixin sAuth2(data)
+	// start sAuth
+	+b.SECTION.sAuth.section#sAuth&attributes(attributes)
+		.container
+			.inner-bg.text-center
+				.section-title: h3 Forgot your password?
+				.sub
+					.small Please enter the email address you used to register.
+					.small You will receive a temporary link to reset your password.
+				.card
+					+form-wrap
+						+input('Enter your first name', 'text', '')
+						.btn-wrap.text-center
+							+e.btn.btn.btn-secondary.BUTTON(type="submit") Send reset link
+
+	// end sAuth
+mixin sAuth3(data)
+	// start sAuth
+	+b.SECTION.sAuth.section#sAuth&attributes(attributes)
+		.container
+			.inner-bg.text-center
+				.sub
+					.small If this email address has been registered in our shop, you will receive a link to reset your password at
+				.section-title: h3 sam.vinchester@yahoo.com
+					.btn-wrap.text-center
+						+e.btn.btn.btn-outline-primary(href='#') Try again

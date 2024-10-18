@@ -145,6 +145,21 @@ main {
   .hero-bg-2 {
     right: 0;
   }
+
+  &.auth {
+    display: flex;
+    flex-direction: column;
+
+    &:before {
+      height: 160%;
+      background: linear-gradient(180deg, #1ac0c6 0%, rgba(26, 192, 198, 0.166) 100%);
+      // top: rem(-20);
+      // @include media-breakpoint-up(lg) {
+      //   top: rem(-120);
+      //   height: 120%;
+      // }
+    }
+  }
 }
 
 
@@ -616,6 +631,7 @@ h3 {
 
   background: $body-bg;
   padding: rem(14) rem(10);
+  border-top: 1px solid $gray-200;
 
   .btn {
     width: 100%;

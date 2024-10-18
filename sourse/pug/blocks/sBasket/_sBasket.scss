@@ -6,11 +6,6 @@
     @include media-breakpoint-up(lg) {
       --sPB: #{rem(60)};
       }
-	
-	&__row{
-		// --bs-gutter-x: #{rem()};
-		// --bs-gutter-y: #{rem()};
-	}
 
 	&__top {
 		display: flex;

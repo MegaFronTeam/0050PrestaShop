@@ -1,0 +1,63 @@
+mixin sOrderConfirmed(data)
+	// start sOrderConfirmed
+	+b.SECTION.sOrderConfirmed.section#sOrderConfirmed&attributes(attributes)
+		.container: .inner-bg
+				+e.row.row
+					.col-lg-8: +e.item
+						.item-title.item-title_green.fw-700.ls-6 Your order is confirmed
+						.inner-wrap
+							p Please seAn email has been sent to the #[span nicolomelodini@gmail.com] address.nd us your check including the following details:
+							.item-title.fw-700.mb-40 Order items
+							.list-wrap
+								+b.order-item--header.ttu.small
+									.header PRODUCT
+									.header QUANTITY
+									.header UNIT PRICE
+									.header TOTAL PRICE
+								+order-item(2, 1, 130, '€120', '€120')
+								+order-item(3, 3, '€20', '€60')
+								+order-item(5, 1, '€45', '€45')
+							.summary
+					.col-lg-4
+						+card-aside3
+	// end sOrderConfirmed
+
+mixin order-item(i, q, price, total, newPrice )
+	+b.order-item
+		.basket-item__item
+			.basket-item__img-wrap: +img(`img/prod-${i}.jpg`).img-bg
+			.basket-item__descr.small
+				.title.fw-700.ls-4 Fisher Price Monster Toy Green
+				.art.ls-7 Article: 5013 4569
+		.q=q
+		.prices-wrap
+			if newPrice
+				.prices
+					.price_old.small €130
+					.product-item__span.SPAN -€10
+					.basket-item__new-price €120
+			if !newPrice
+				.prices
+					.price= price
+		.total=total
+
+mixin card-aside3
+	+b.card-aside.card.card_green.card-lg
+		+img(src='img/svg/clouds-discont-sm.svg').clouds
+		.sum.item.fw-700.ls-4.sum-title
+			.text Order details
+		.item.small
+			.text.ls-6 Order reference:
+			.text.ls-6.fw-700 YCBDOKGJA
+		.item.small
+			.text.ls-6 Payment method:
+			.text.ls-6.fw-700 Bank transfer
+		.item.small
+			.text.ls-6 Shipping method:
+			.text.ls-6.fw-700 Develop shop
+		+e.delivery
+			.icon-wrap: +icon('delivery')
+			.descr
+				.fw-700 Delivery November 21
+				.time from 9:00 to 14:00
+

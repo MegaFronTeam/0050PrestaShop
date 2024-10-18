@@ -1,0 +1,135 @@
+// start .sOrderConfirmed
+.sOrderConfirmed {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	// --sTPB: #{rem()};
+	
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+	}
+	p {
+    color: $gray-600;
+    font-size: rem(14);
+
+    span {
+      color: $primary;
+    }
+  }
+
+  &__item {
+    border: 1px solid $teal-200;
+    border-radius: 20px;
+  }
+
+  .item-title  {
+    font-family: $headings-font-family;
+
+    font-size: rem(18);
+
+    &_green {
+      background: $primary;
+      color: $teal-100;
+      border-radius: 20px 20px 0 0 ;
+      padding: rem(16) rem(24);
+    }
+  }
+
+  .mb-40 {
+    margin-bottom: rem(40);
+  }
+
+  .inner-wrap {
+    padding: rem(22) rem(32);
+    @include media-breakpoint-up(xl) {
+      padding: rem(32) rem(48);
+    }
+  }
+
+  .list-wrap {
+    @include media-breakpoint-down(md) {
+      overflow-x: auto;
+      overflow-y: hidden;
+
+      .order-item {
+        width: 600px;
+      }
+    }
+
+    border-bottom: 1px solid $gray-100;
+    margin-bottom: rem(48);
+  }
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sOrderConfirmed
+
+.order-item {
+  display: grid;
+  grid-template-columns: 50% 74px 1fr .8fr;
+  align-items: center;
+  margin-bottom: rem(48);
+  &:last-child {
+    margin-bottom: rem(24);
+  }
+
+  .basket-item__item,
+  .basket-item__prices-wrap {
+    width: auto;
+  }
+
+  .basket-item__item {
+
+    @include media-breakpoint-up(xl) {
+      gap: rem(32);
+    }
+  }
+
+  .product-item__span {
+    font-size: rem(14);
+  }
+
+  .price_old {
+    text-decoration: line-through;
+    opacity: .5;
+  }
+
+  .price, .total, .q {
+    font-size: rem(18);
+    opacity: .85;
+  }
+
+  &--header {
+    opacity: .6;
+    letter-spacing: 0.07em;
+    .header {
+      &:not(:first-child) {
+        text-align: center;
+      }
+    }
+
+    border-bottom: 1px solid $gray-100;
+    padding-bottom: rem(24);
+    margin-bottom: rem(26);
+  }
+
+  &:not(.order-item--header) {
+    justify-items: center;
+  }
+  .basket-item__img-wrap {
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .title  {
+    margin-bottom: rem(8);
+  }
+
+
+}

@@ -1,0 +1,74 @@
+// start .sCheckout
+.sCheckout {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	// --sTPB: #{rem()};
+	
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+	}
+	.section-title{
+		
+	}
+	
+	&__top {
+		display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem(10);
+    @include media-breakpoint-up(lg) {
+      max-width: calc(8 / 12 * 100%);
+    }
+    margin-bottom: rem(30);
+
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: calc(100% );
+      height: 1px;
+      left: 0;
+      bottom: -10px;
+      background: $gray-200;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: rem(10);
+      margin-bottom: 0;
+      @include media-breakpoint-up(lg) {
+        gap: rem(32);
+      }
+
+      .icon {
+        margin-right: rem(8);
+        transform: translateY(-1px);
+      }
+
+      a {
+        color: $gray-700;
+        font-size: rem(14);
+        letter-spacing: 0.07em;
+      }
+      li:hover a {
+        color: $teal-300;
+      }
+
+    }
+	}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sCheckout
+
+.card-aside.card.card_green.card-additional {
+  padding-bottom: rem(48);
+}

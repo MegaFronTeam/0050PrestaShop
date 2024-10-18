@@ -1,0 +1,42 @@
+mixin sCheckout(data)
+	// start sCheckout
+	+b.SECTION.sCheckout.section#sCheckout&attributes(attributes)
+		.container
+			.inner-bg
+				+breadcrumb1('Checkout')
+				+e.top
+					h3 Checkout
+					ul
+						li: a(href='#')
+							+icon('delivery')
+							| Delivery policy
+						li: a(href='#')
+							+icon('return')
+							| Return policy
+					//- .radio-wrap
+					//- 	+in-c('radio','For boys')(checked)
+					//- 	+in-c('radio','For girls')
+				+e.row.row
+					.col-lg-8
+					.col-lg-4
+						+card-aside2
+	// end sCheckout
+
+
+mixin card-aside2
+	+b.card-aside.card.card_green.card-additional
+		.item
+			.text.ls-6 3 items
+			.text.ls-6 €193
+		.item
+			.text.ls-6 Discount
+			.product-item__span.ls-6 €10
+		.sum.item.fw-700.ls-4
+			.text Total:
+			.text €120
+		+img(src='img/svg/cloud-sm.svg')
+		+img(src='img/svg/clouds-discont.svg').clouds
+		+e.btns.text-center
+			+input('Promokod', 'text')
+				.span-discont.fw-600 %
+				.links-card: button.link-item: +icon('chevron-right')

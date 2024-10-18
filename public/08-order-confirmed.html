@@ -29,59 +29,109 @@
 			<script>addBlock(`header`)</script>
 			<div id="headerWrap"></div>
 			<main><img class="hero-bg hero-bg-1" src="img/svg/hero-bg-1.svg" alt="" loading="lazy"/><img class="hero-bg hero-bg-2" src="img/svg/hero-bg-2.svg" alt="" loading="lazy"/>
-				<!-- start sCheckout-->
-				<section class="sCheckout section" id="sCheckout">
+				<!-- start sOrderConfirmed-->
+				<section class="sOrderConfirmed section" id="sOrderConfirmed">
 					<div class="container">
 						<div class="inner-bg">
-							<nav class="swiper breadcrumb-slider--js" aria-label="breadcrumb">
-								<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
-									<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Main</span>
-											<meta itemprop="position" content="1"/></a></li>
-									<li class="breadcrumb-item active swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Checkout</span>
-											<meta itemprop="position" content="2"/></a></li>
-								</ol>
-							</nav>
-							<div class="sCheckout__top">
-								<h3>Checkout</h3>
-								<ul>
-									<li><a href="#">
-											<svg class="icon icon-delivery ">
-												<use xlink:href="img/svg/sprite.svg#delivery"></use>
-											</svg>Delivery policy</a></li>
-									<li><a href="#">
-											<svg class="icon icon-return ">
-												<use xlink:href="img/svg/sprite.svg#return"></use>
-											</svg>Return policy</a></li>
-								</ul>
-							</div>
-							<div class="sCheckout__row row">
-								<div class="col-lg-8"></div>
-								<div class="col-lg-4">
-									<div class="card-aside card card_green card-additional">
-										<div class="item">
-											<div class="text ls-6">3 items</div>
-											<div class="text ls-6">€193</div>
-										</div>
-										<div class="item">
-											<div class="text ls-6">Discount</div>
-											<div class="product-item__span ls-6">€10</div>
-										</div>
-										<div class="sum item fw-700 ls-4">
-											<div class="text">Total:</div>
-											<div class="text">€120</div>
-										</div><img src="img/svg/cloud-sm.svg" alt="" loading="lazy"/><img class="clouds" src="img/svg/clouds-discont.svg" alt="" loading="lazy"/>
-										<div class="card-aside__btns text-center">
-											<div class="card-aside__input-wrap form-group"><input class="card-aside__input form-control" inputmode="text" name="text" type="text" placeholder="Promokod"/>
-												<div class="span-discont fw-600">%</div>
-												<div class="links-card">
-													<button class="link-item">
-														<svg class="icon icon-chevron-right ">
-															<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
-														</svg>
-													</button>
+							<div class="sOrderConfirmed__row row">
+								<div class="col-lg-8">
+									<div class="sOrderConfirmed__item">
+										<div class="item-title item-title_green fw-700 ls-6">Your order is confirmed</div>
+										<div class="inner-wrap">
+											<p>Please seAn email has been sent to the <span>nicolomelodini@gmail.com</span> address.nd us your check including the following details:</p>
+											<div class="item-title fw-700 mb-40">Order items</div>
+											<div class="list-wrap">
+												<div class="order-item order-item--header ttu small">
+													<div class="header">PRODUCT</div>
+													<div class="header">QUANTITY</div>
+													<div class="header">UNIT PRICE</div>
+													<div class="header">TOTAL PRICE</div>
+												</div>
+												<div class="order-item">
+													<div class="basket-item__item">
+														<div class="basket-item__img-wrap"><img class="img-bg" src="img/prod-2.jpg" alt="" loading="lazy"/>
+														</div>
+														<div class="basket-item__descr small">
+															<div class="title fw-700 ls-4">Fisher Price Monster Toy Green</div>
+															<div class="art ls-7">Article: 5013 4569</div>
+														</div>
+													</div>
+													<div class="q">1</div>
+													<div class="prices-wrap">
+														<div class="prices">
+															<div class="price_old small">€130</div>
+															<div class="product-item__span SPAN">-€10</div>
+															<div class="basket-item__new-price">€120</div>
+														</div>
+													</div>
+													<div class="total">€120</div>
+												</div>
+												<div class="order-item">
+													<div class="basket-item__item">
+														<div class="basket-item__img-wrap"><img class="img-bg" src="img/prod-3.jpg" alt="" loading="lazy"/>
+														</div>
+														<div class="basket-item__descr small">
+															<div class="title fw-700 ls-4">Fisher Price Monster Toy Green</div>
+															<div class="art ls-7">Article: 5013 4569</div>
+														</div>
+													</div>
+													<div class="q">3</div>
+													<div class="prices-wrap">
+														<div class="prices">
+															<div class="price">€20</div>
+														</div>
+													</div>
+													<div class="total">€60</div>
+												</div>
+												<div class="order-item">
+													<div class="basket-item__item">
+														<div class="basket-item__img-wrap"><img class="img-bg" src="img/prod-5.jpg" alt="" loading="lazy"/>
+														</div>
+														<div class="basket-item__descr small">
+															<div class="title fw-700 ls-4">Fisher Price Monster Toy Green</div>
+															<div class="art ls-7">Article: 5013 4569</div>
+														</div>
+													</div>
+													<div class="q">1</div>
+													<div class="prices-wrap">
+														<div class="prices">
+															<div class="price">€45</div>
+														</div>
+													</div>
+													<div class="total">€45</div>
 												</div>
 											</div>
-											<!-- +e.input-wrap-->
+											<div class="summary"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="card-aside card card_green card-lg"><img class="clouds" src="img/svg/clouds-discont-sm.svg" alt="" loading="lazy"/>
+										<div class="sum item fw-700 ls-4 sum-title">
+											<div class="text">Order details</div>
+										</div>
+										<div class="item small">
+											<div class="text ls-6">Order reference:</div>
+											<div class="text ls-6 fw-700">YCBDOKGJA</div>
+										</div>
+										<div class="item small">
+											<div class="text ls-6">Payment method:</div>
+											<div class="text ls-6 fw-700">Bank transfer</div>
+										</div>
+										<div class="item small">
+											<div class="text ls-6">Shipping method:</div>
+											<div class="text ls-6 fw-700">Develop shop</div>
+										</div>
+										<div class="card-aside__delivery">
+											<div class="icon-wrap">
+												<svg class="icon icon-delivery ">
+													<use xlink:href="img/svg/sprite.svg#delivery"></use>
+												</svg>
+											</div>
+											<div class="descr">
+												<div class="fw-700">Delivery November 21</div>
+												<div class="time">from 9:00 to 14:00</div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -89,7 +139,7 @@
 						</div>
 					</div>
 				</section>
-				<!-- end sCheckout-->
+				<!-- end sOrderConfirmed-->
 			</main>
 			<script>addBlock(`footer`)</script>
 			<div id="footerWrap"></div>

@@ -7,7 +7,7 @@ include ../blocks/sContent/_sContent.pug
 include ../blocks/sPromo/_sPromo.pug
 include ../blocks/sSliderMore/_sSliderMore.pug
 include ../blocks/sCategories/_sCategories.pug
-include ../blocks/sBasket/_sBasket.pug
+include ../blocks/sOrderConfirmed/_sOrderConfirmed.pug
 include ../blocks/sCheckout/_sCheckout.pug
 
 block variables
@@ -23,6 +23,6 @@ block pagecontent
 	
 	+parts('header')
 	+main
-		+sCheckout
+		+sOrderConfirmed
 		
 	+parts('footer')

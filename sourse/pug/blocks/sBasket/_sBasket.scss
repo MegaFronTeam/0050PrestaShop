@@ -81,9 +81,15 @@
     }
   }
 
-  .text {
+  .item:not(.small) .text {
     font-size: rem(18);
-    margin-bottom: rem(6);
+  }
+  .text {
+	margin-bottom: rem(6);
+	text-wrap: balance;
+  }
+  .item.small {
+	opacity: .8;
   }
 
   &.card {
@@ -105,9 +111,16 @@
     }
 
     .sum.item {
-      padding-top: rem(16);
-      border-top: 1px solid white;
-      margin-top: rem(20);
+		&:not(.sum-title) {
+			padding-top: rem(16);
+			border-top: 1px solid white;
+			margin-top: rem(20);
+		}
+		&.sum-title {
+			padding-bottom: rem(6);
+			border-bottom: 2px solid $gray-600;
+			margin-bottom: rem(17);
+		}
 
       .text {
         font-size: rem(20);
@@ -172,6 +185,38 @@
     max-width: 100%;
     width: 100%;
     --bs-btn-padding-x: #{rem(10)};
+  }
+
+  &.card-lg {
+	padding-bottom: rem(117);
+	&:after {
+		height: 76%;
+	}
+  }
+
+  &__delivery {
+	display: flex;
+	gap: rem(16);
+	margin-top: rem(22);
+
+	.icon-wrap {
+		background: white;
+		border-radius: 50%;
+		color: $purple;
+		flex-shrink: 0;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: rem(36);
+		height: rem(36);
+		transform: translateY(-25%);
+	}
+
+	.time {
+		font-size: rem(12);
+	}
   }
 
 }
@@ -271,7 +316,7 @@
     opacity: .5;
     font-size: 18px;
   }
-  .prices-wrap {
+  &__prices-wrap {
     @include media-breakpoint-up(md) {
       width: 20%;
     }

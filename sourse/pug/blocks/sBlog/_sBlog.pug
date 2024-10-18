@@ -3,17 +3,18 @@ mixin sBlog(data)
 	+b.SECTION.sBlog.section#sBlog&attributes(attributes)
 		.container
 			+sectionTitle('Blog')
-			+e.row.row
-				+e.col.col-lg-4
-					+blogCard(1, "Silicone toothbrush Dr. Brown's for babies")
-				+e.col.col-lg-4
-					+blogCard(2, "Silicone toothbrush Dr. Brolicone toothbrush Dr. Brown's for babies")
-				+e.col.col-lg-4
-					+blogCard(3, "Silicone toothbrush Dr. Brown's for babies")
-				+e.col.col-lg-8
-					+blogCard(4, "Silicone toothbrush Dr. Brown's for babies")
-				+e.col.col-lg-4
-					+blogCard(5, "Silicone toothbrush Dr. Brown's for babies")
+			+e.swiper--js
+				+e.row.row.swiper-wrapper
+					+e.col.col-lg-4.swiper-slide
+						+blogCard(1, "Silicone toothbrush Dr. Brown's for babies")
+					+e.col.col-lg-4.swiper-slide
+						+blogCard(2, "Silicone toothbrush Dr. Brolicone toothbrush Dr. Brown's for babies")
+					+e.col.col-lg-4.swiper-slide
+						+blogCard(3, "Silicone toothbrush Dr. Brown's for babies")
+					+e.col.col-lg-4.swiper-slide
+						+blogCard(4, "Silicone toothbrush Dr. Brown's for babies")
+					+e.col.col-lg-4.swiper-slide
+						+blogCard(5, "Silicone toothbrush Dr. Brown's for babies")
 	// end sBlog
 
 mixin blogCard(i, title)

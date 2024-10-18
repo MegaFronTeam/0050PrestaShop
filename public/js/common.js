@@ -108,6 +108,17 @@ function eventHandler() {
       }
     });
   })
+  new Swiper('.sBlog__swiper--js', {
+		freeMode: true,
+		slidesPerView: 'auto',
+		spaceBetween: 0,
+		breakpoints: {
+			960: {
+				// spaceBetween: 20,
+				// slidesPerView: 4,
+			},
+		},
+	})
 
    /* thumb slider */
    let prodCardThumb = new Swiper(".sProdCard-thumb-js", {

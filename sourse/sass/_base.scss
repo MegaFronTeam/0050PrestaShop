@@ -530,6 +530,10 @@ iframe {
 	}
 }
 
+h3 {
+  letter-spacing: 0.04em;
+}
+
 .btn-secondary {
   --bs-btn-color: white;
   --bs-btn-bg: #f9e920;
@@ -600,4 +604,20 @@ iframe {
 			display: inline-block;
 		}
 	}
+}
+
+
+.btn-fix-wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  background: $body-bg;
+  padding: rem(14) rem(10);
+
+  .btn {
+    width: 100%;
+  }
 }

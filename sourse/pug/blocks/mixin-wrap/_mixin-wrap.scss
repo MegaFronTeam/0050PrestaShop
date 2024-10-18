@@ -540,7 +540,7 @@
     text-decoration: line-through;
     display: inline;
   }
-  span {
+  &__span, span {
     display: inline-block;
     border-radius: $border-radius;
     padding: 0px 8px;

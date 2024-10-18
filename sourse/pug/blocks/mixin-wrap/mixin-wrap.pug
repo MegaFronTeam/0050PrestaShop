@@ -134,7 +134,7 @@ mixin product-item(i, t, star, pr, newP)
 			if newP
 				+e.price-wr
 					+e.price.price_old!= pr
-					span.fw-600= newP
+					+e.span.SPAN.fw-600= newP
 			if !newP
 				+e.price-wr
 					+e.price.fw-600!= pr

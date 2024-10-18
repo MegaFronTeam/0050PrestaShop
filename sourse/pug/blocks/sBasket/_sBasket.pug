@@ -1,0 +1,57 @@
+mixin sBasket(data)
+	// start sBasket
+	+b.SECTION.sBasket.section#sBasket&attributes(attributes)
+		.container: .inner-bg
+			+breadcrumb1('Basket')
+			+e.top
+				h3 Basket
+				.links-card: button.link-item.small
+					+icon('bin')
+					| Empty basket
+			+e.row.row
+				.col-lg-8
+					+basketItem(6, 'Fisher Price Monster Toy Green', 100, true)
+					+basketItem(7, 'Fisher Price Monster', '€100.99')
+					+basketItem(5, 'Fisher Price Monster', '€100')
+				.col-lg-4
+					+card-aside
+				.d-lg-none.btn-fix-wrap: .btn.btn-secondary(href='#') Chekout
+	// end sBasket
+
+mixin card-aside
+	+b.card-aside.card.card_green
+		.item
+			.text.ls-6 3 items
+			.text.ls-6 €193
+		.item
+			.text.ls-6 Discount
+			.product-item__span.ls-6 €10
+		.sum.item.fw-700.ls-4
+			.text Total:
+			.text €120
+		+img(src='img/svg/cloud-sm.svg')
+		+img(src='img/svg/clouds-discont.svg').clouds
+		+e.btns.text-center
+			+input('Promokod', 'text')
+				.span-discont.fw-600 %
+				.links-card: button.link-item: +icon('chevron-right')
+			+e.btn.btn.btn-secondary(href='#') Chekout
+
+mixin basketItem(i, title, price, newPrice )
+	+b.basket-item.product-item
+		.links-card: button.link-item: +icon('bin')
+		+e.item.A(href='#')
+			+e.img-wrap: +img(`img/prod-${i}.jpg`).img-bg
+			+e.descr.small
+				.title.fw-700.ls-4=title
+				.art.ls-7 Article: 5013 4569
+		+addblock
+		.prices-wrap
+			if newPrice
+				.prices
+					.price_old.small €130
+					span -€10
+					+e.new-price €120
+			if !newPrice
+				.prices
+					.price= price

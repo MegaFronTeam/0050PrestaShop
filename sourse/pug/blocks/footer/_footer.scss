@@ -1,3 +1,10 @@
+.longer .footer {
+  @include media-breakpoint-down(lg) {
+	--sPB: #{rem(100)};
+  }
+}
+
+
 .footer {
 	position: relative;
 	margin-top: auto;

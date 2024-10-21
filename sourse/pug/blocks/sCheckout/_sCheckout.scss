@@ -6,7 +6,7 @@
 	
 	&__row{
 		// --bs-gutter-x: #{rem()};
-		// --bs-gutter-y: #{rem()};
+		--bs-gutter-y: #{var(--bs-gutter-x)};
 	}
 	.section-title{
 		
@@ -165,6 +165,15 @@
     }
   }
 
+  &:first-child.active {
+    .title-wrap {
+
+      @include media-breakpoint-down(md) {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
   .checkout-title {
     display: inline-block;
     font-family: $headings-font-family;
@@ -205,6 +214,11 @@
     padding: rem(16) rem(29);
     display: flex;
     justify-content: space-between;
+    gap: rem(10);
+    
+    @include media-breakpoint-down(md) {
+      flex-wrap: wrap;
+    }
 
     --t-color: #{$teal-200};
     color: var(--t-color);
@@ -457,6 +471,7 @@
   position: relative;
   border: 1px solid $teal-200;
   min-height: rem(247);
+  width: 100%;
 
   &:hover {
     box-shadow: 0 3px 24px 0 rgba(20, 169, 174, 0.2);
@@ -562,6 +577,11 @@
   &:hover {
     box-shadow: 0 3px 24px 0 rgba(20, 169, 174, 0.2);
   }
+  .wrapper, .deliv, .price  {
+    @include media-breakpoint-down(md) {
+      grid-column: span 2 /-1;
+    }
+  }
 
   .custom-input__text {
     font-weight: 700;
@@ -571,7 +591,10 @@
   }
   label {
     display: grid;
-    grid-template-columns: max-content 1.4fr .9fr .5fr;
+    grid-template-columns: 0 1fr 1fr;
+    @include media-breakpoint-up(md) {
+      grid-template-columns: max-content 1.4fr .9fr .5fr;
+    }
     padding: rem(18) rem(32);
     padding-left: rem(64);
     img {

@@ -84,12 +84,18 @@
   .item:not(.small) .text {
     font-size: rem(18);
   }
+
+  .item:not(.sum) .text {
+    opacity: 0.8;
+    letter-spacing: 0.06em;
+  }
+
   .text {
 	margin-bottom: rem(6);
 	text-wrap: balance;
   }
   .item.small {
-	opacity: .8;
+    opacity: .8;
   }
 
   &.card {

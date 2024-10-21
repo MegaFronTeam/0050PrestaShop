@@ -4,24 +4,113 @@ mixin sCheckout(data)
 		.container
 			.inner-bg
 				+breadcrumb1('Checkout')
-				+e.top
-					h3 Checkout
-					ul
-						li: a(href='#')
-							+icon('delivery')
-							| Delivery policy
-						li: a(href='#')
-							+icon('return')
-							| Return policy
-					//- .radio-wrap
-					//- 	+in-c('radio','For boys')(checked)
-					//- 	+in-c('radio','For girls')
+				+topCheckout
 				+e.row.row
 					.col-lg-8
+						.inner-wrap
+							+titleCheckout('Personal information', 'first', 'notLoggedIn').active
+								+form-wrap
+									.form-group
+										label
+											span.checkout-item__input-title Social title
+											.wrap
+												+in-c('radio','Mr.')(checked)
+												+in-c('radio','Mrs.')
+									+input('Enter your first name', 'text', 'First name')
+									+input('Enter your last name', 'text', 'Last name')
+									+input('Enter your Email', 'email', 'Email')
+									.form-group
+										.title.fw-700 Create an account
+										.hint.hint-it.ml-0 And save time on your next order!
+									+input('Enter your password', 'password', 'Password')
+										.hint Use only letters and numbers
+									+input('Birthdate', 'date', 'Birthdate')
+										.hint.hint-title.d-none.d-md-block Optional
+										.hint (E.g.: 05/31/1970)
+									.order-l
+										+in-c1('checkbox', 'Receive offers from our partners')(checked)
+										+in-c1('checkbox', 'Sign up for our newsletter')
+										.hint.hint-it.ml You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.
+										+policy()
+										+e.btn.BUTTON.btn.btn-secondary(type="submit") Save
+							+titleCheckout('Address', false, false ).filled
+							+titleCheckout('Shipping method', false, false )
+							+titleCheckout('Payment', false, false )
 					.col-lg-4
 						+card-aside2
 	// end sCheckout
 
+mixin sCheckoutLogin(data)
+	// start sCheckout
+	+b.SECTION.sCheckout.section#sCheckout&attributes(attributes)
+		.container
+			.inner-bg
+				+breadcrumb1('Checkout')
+				+topCheckout
+				+e.row.row
+					.col-lg-8
+						.inner-wrap
+							+titleCheckout2('Personal information', 'first', 'notLoggedIn').active
+								+form-wrap
+									+input('Enter your Email', 'email', 'Email')
+									+input('Enter your password', 'password', 'Password')
+										.hint: a(href='#') Forgot your password?
+									.order-l
+										+e.btn.BUTTON.btn.btn-secondary(type="submit") Continue
+							+titleCheckout('Address', false, false )
+							+titleCheckout('Shipping method', false, false )
+							+titleCheckout('Payment', false, false )
+					.col-lg-4
+						+card-aside2
+	// end sCheckout
+
+mixin topCheckout
+	+e.top
+		h3 Checkout
+		ul
+			li: a(href='#')
+				+icon('delivery')
+				| Delivery policy
+			li: a(href='#')
+				+icon('return')
+				| Return policy
+
+mixin titleCheckout(t, isFirst, notLoggenIn, filled)
+	+b.checkout-item&attributes(attributes)
+		.title-wrap
+			.checkout-title= t
+			if isFirst && notLoggenIn
+				.part.small
+					+e.item-link(href='#').active
+						+icon('guest')
+						| Order as a guest
+					+e.item-link(href='#')
+						+icon('login')
+						| Log In
+			if filled
+				.part.small
+					+e.item-link(href='#')
+						+icon('edit')
+						| Edit
+		if block
+			.checkout-content
+				block
+
+mixin titleCheckout2(t, isFirst, notLoggenIn)
+	+b.checkout-item&attributes(attributes)
+		.title-wrap
+			.checkout-title= t
+			if isFirst && notLoggenIn
+				.part.small
+					+e.item-link(href='#')
+						+icon('guest')
+						| Order as a guest
+					+e.item-link(href='#').active
+						+icon('login')
+						| Log In
+		if block
+			.checkout-content
+				block
 
 mixin card-aside2
 	+b.card-aside.card.card_green.card-additional
@@ -40,3 +129,281 @@ mixin card-aside2
 			+input('Promokod', 'text')
 				.span-discont.fw-600 %
 				.links-card: button.link-item: +icon('chevron-right')
+	.additional-wrap
+		+e.bottom-item
+			.basket-item__img-wrap: +img(`img/prod-2.jpg`).img-bg
+			.basket-item__descr.small
+				.title.ls-7 Fisher Price Monster Toy Green
+			.basket-item__sum.fw-700 €28
+		+e.bottom-item
+			.basket-item__img-wrap: +img(`img/prod-3.jpg`).img-bg
+			.basket-item__descr.small
+				.title.ls-7 Fisher Price Monster Toy Green Fishece Monster Toy Green
+			.basket-item__sum.fw-700 €28
+		.btn-wrap
+			+e.more#show-more-btn More
+				+icon('chevron-right')
+			+e.more#hide-more-btn Hide
+				+icon('chevron-right')
+
+
+mixin sCheckout2(data)
+	// start sCheckout
+	+b.SECTION.sCheckout.section#sCheckout&attributes(attributes)
+		.container
+			.inner-bg
+				+breadcrumb1('Checkout')
+				+topCheckout
+				+e.row.row
+					.col-lg-8
+						.inner-wrap
+							+titleCheckout('Personal information', 'first', '', 'filled').filled
+								+form-wrap
+									.form-group
+										label
+											span.checkout-item__input-title Social title
+											.wrap
+												+in-c('radio','Mr.')(checked)
+												+in-c('radio','Mrs.')
+									+input('Enter your first name', 'text', 'First name')
+									+input('Enter your last name', 'text', 'Last name')
+									+input('Enter your Email', 'email', 'Email')
+									.form-group
+										.title.fw-700 Create an account
+										.hint.hint-it.ml-0 And save time on your next order!
+									+input('Enter your password', 'password', 'Password')
+										.hint Use only letters and numbers
+									+input('Birthdate', 'date', 'Birthdate')
+										.hint.hint-title.d-none.d-md-block Optional
+										.hint (E.g.: 05/31/1970)
+									.order-l
+										+in-c1('checkbox', 'Receive offers from our partners')(checked)
+										+in-c1('checkbox', 'Sign up for our newsletter')
+										.hint.hint-it.ml You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.
+										+policy()
+										+e.btn.BUTTON.btn.btn-secondary(type="submit") Save
+							+titleCheckout('Address', false, false ).active
+								+form-wrap
+									+input('Enter your first name', 'text', 'First name')
+									+input('Enter your last name', 'text', 'Last name')
+									+input('', 'text', 'Company')
+										.hint.hint-title.d-none.d-md-block Optional
+									+input('', 'text', 'VAT number')
+										.hint.hint-title.d-none.d-md-block Optional
+									+input('', 'text', 'Address')
+									+input('', 'text', 'Other address')
+										.hint.hint-title.d-none.d-md-block Optional
+									+input('', 'text', 'ZIP/Postal Code')
+									+input('', 'text', 'City')
+									+input('', 'text', 'Country')
+									+input('', 'text', 'Phone')
+									+input('', 'tel', 'Phone')
+										.hint.hint-title.d-none.d-md-block Optional
+									.order-l
+										+in-c1('checkbox', 'Use this address for invoice too')(checked)
+										+e.btn.BUTTON.btn.btn-secondary(type="submit") Continue
+							+titleCheckout('Shipping method', false, false )
+							+titleCheckout('Payment', false, false )
+					.col-lg-4
+						+card-aside2
+	// end sCheckout
+
+
+mixin sCheckout2Filled(data)
+	// start sCheckout
+	+b.SECTION.sCheckout.section#sCheckout&attributes(attributes)
+		.container
+			.inner-bg
+				+breadcrumb1('Checkout')
+				+topCheckout
+				+e.row.row
+					.col-lg-8
+						.inner-wrap
+							+titleCheckout('Personal information', 'first', '', 'filled').filled
+								+form-wrap
+									.form-group
+										label
+											span.checkout-item__input-title Social title
+											.wrap
+												+in-c('radio','Mr.')(checked)
+												+in-c('radio','Mrs.')
+									+input('Enter your first name', 'text', 'First name')
+									+input('Enter your last name', 'text', 'Last name')
+									+input('Enter your Email', 'email', 'Email')
+									.form-group
+										.title.fw-700 Create an account
+										.hint.hint-it.ml-0 And save time on your next order!
+									+input('Enter your password', 'password', 'Password')
+										.hint Use only letters and numbers
+									+input('Birthdate', 'date', 'Birthdate')
+										.hint.hint-title.d-none.d-md-block Optional
+										.hint (E.g.: 05/31/1970)
+									.order-l
+										+in-c1('checkbox', 'Receive offers from our partners')(checked)
+										+in-c1('checkbox', 'Sign up for our newsletter')
+										.hint.hint-it.ml You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.
+										+policy()
+										+e.btn.BUTTON.btn.btn-secondary(type="submit") Save
+							+titleCheckout('Address', false, false ).active
+								p The selected address will be used both as your personal address (for invoice) and as your delivery address.
+								+e.address-row.row
+									+e.col.col-lg-6
+										+addressItem('Address #1', 'checked')
+									+e.col.col-lg-6
+										+addressItem('Address #2')
+									+e.col.col-lg-12
+										.hint.hint-it.ml.hint-problem
+											+img('img/svg/problem.png')
+											| Billing address differs from shipping address
+									+e.col.col-lg-6
+										+b.address-item--add.A(href='#')
+											.section-title__icon-wrap +
+											+e.title Create new address
+								.text-center: +e.btn.BUTTON.btn.btn-secondary(type="submit") Continue
+							+titleCheckout('Shipping method', false, false )
+							+titleCheckout('Payment', false, false )
+					.col-lg-4
+						+card-aside2
+	// end sCheckout
+
+mixin addressItem(t, ch)
+	+b.address-item
+		if ch
+			+in-c('radio', t, 'text')(checked=`${ch}`)
+		if !ch
+			+in-c('radio', t, 'text')
+		.links-card.links-card__links-wr
+			button.link-item(href='#'): +icon('edit')
+			button.link-item(href='#'): +icon('bin')
+		+e.addr-item
+			+e.title First name
+			+e.value Sam
+		+e.addr-item
+			+e.title Last name
+			+e.value Vinch
+		+e.addr-item
+			+e.title Address
+			+e.value Lobarevskogo Loop st, 32
+		+e.addr-item
+			+e.title ZIP/Postal Code
+			+e.value 123765
+		+e.addr-item
+			+e.title City
+			+e.value Warsaw
+		+e.addr-item
+			+e.title Country
+			+e.value Poland
+
+mixin sCheckout3(data)
+	// start sCheckout
+	+b.SECTION.sCheckout.section#sCheckout&attributes(attributes)
+		.container
+			.inner-bg
+				+breadcrumb1('Checkout')
+				+topCheckout
+				+e.row.row
+					.col-lg-8
+						.inner-wrap
+							+titleCheckout('Personal information', 'first', '', 'filled').filled
+							+titleCheckout('Address', false, false, 'filled' ).filled
+								p The selected address will be used both as your personal address (for invoice) and as your delivery address.
+								+e.address-row.row
+									+e.col.col-lg-6
+										+addressItem('Address #1', 'checked')
+									+e.col.col-lg-6
+										+addressItem('Address #2')
+									+e.col.col-lg-12
+										.hint.hint-it.ml.hint-problem
+											+img('img/svg/problem.png')
+											| Billing address differs from shipping address
+									+e.col.col-lg-6
+										+b.address-item--add.A(href='#')
+											.section-title__icon-wrap +
+											+e.title Create new address
+								.text-center: +e.btn.BUTTON.btn.btn-secondary(type="submit") Continue
+							+titleCheckout('Shipping method', false, false ).active.content-wide
+								.list-shipping
+									+shippingMethod('', 'Developer shop', 'Pick up in-store', 'Free')
+									+shippingMethod('1', 'FedEx', 'Delivery next day', '€89','hint')
+									+shippingMethod('2', 'DPD', 'Delivery next day', '€79','hint')
+								p If you would like to add a comment about your order, please write it in the field below
+								+input('Enter your comments...', 'textarea', '')
+								+e.btn.BUTTON.btn.btn-secondary(type="submit") Continue
+							+titleCheckout('Payment', false, false )
+					.col-lg-4
+						+card-aside2
+	// end sCheckout
+
+mixin shippingMethod(img, title, text, price, hint)
+	+b.shipping-method
+		+in-c('radio', title, 'text1')
+			.wrapper
+				span.custom-input__text.form-check-label= title
+				if img
+					+img(`img/svg/ship-${img}.svg`)
+			.deliv= text
+			.price= price
+			if hint
+				.total-card__sub Taxes included
+
+
+mixin sCheckout4(data)
+	// start sCheckout
+	+b.SECTION.sCheckout.section#sCheckout&attributes(attributes)
+		.container
+			.inner-bg
+				+breadcrumb1('Checkout')
+				+topCheckout
+				+e.row.row
+					.col-lg-8
+						.inner-wrap
+							+titleCheckout('Personal information', 'first', '', 'filled').filled
+							+titleCheckout('Address', false, false, 'filled' ).filled
+								p The selected address will be used both as your personal address (for invoice) and as your delivery address.
+								+e.address-row.row
+									+e.col.col-lg-6
+										+addressItem('Address #1', 'checked')
+									+e.col.col-lg-6
+										+addressItem('Address #2')
+									+e.col.col-lg-12
+										.hint.hint-it.ml.hint-problem
+											+img('img/svg/problem.png')
+											| Billing address differs from shipping address
+									+e.col.col-lg-6
+										+b.address-item--add.A(href='#')
+											.section-title__icon-wrap +
+											+e.title Create new address
+								.text-center: +e.btn.BUTTON.btn.btn-secondary(type="submit") Continue
+							+titleCheckout('Shipping method', false, false, 'filled'  ).filled.content-wide
+								.list-shipping
+									+shippingMethod('', 'Developer shop', 'Pick up in-store', 'Free')
+									+shippingMethod('1', 'FedEx', 'Delivery next day', '€89','hint')
+									+shippingMethod('2', 'DPD', 'Delivery next day', '€79','hint')
+								p If you would like to add a comment about your order, please write it in the field below
+								+input('Enter your comments...', 'textarea', '')
+								+e.btn.BUTTON.btn.btn-secondary(type="submit") Continue
+							+titleCheckout('Payment', false, false ).active.content-wide
+								.payment-list
+									+in-c('radio','Pay by Check', 'payment')(checked)
+										span.custom-input__text.form-check-label Pay by Check
+										.content
+											p Please send us your check including the following details:
+											.address-item__addr-item
+												.address-item__title Amount
+												.address-item__value €79
+													.total-card__sub Taxes included
+											.address-item__addr-item
+												.address-item__title Payee
+												.address-item__value Payee
+											.address-item__addr-item
+												.address-item__title Send your check to this address
+												.address-item__value Send your check to this address
+									+in-c('radio','Pay by bank wire', 'payment')
+										span.custom-input__text.form-check-label Pay by bank wire
+										.content
+											p Please transfer the invoice amount to our bank account. You will receive our order confirmation by email containing bank details and order number. Goods will be reserved 7 days for you and we'll process the order immediately after receiving the payment.
+								+policy2()
+								.text-center.mt-30: +e.btn.BUTTON.btn.btn-secondary(type="submit") Continue
+					.col-lg-4
+						+card-aside2
+	// end sCheckout

@@ -1,0 +1,28 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sPromo/_sPromo.pug
+include ../blocks/sSliderMore/_sSliderMore.pug
+include ../blocks/sCategories/_sCategories.pug
+include ../blocks/sBasket/_sBasket.pug
+include ../blocks/sCheckout/_sCheckout.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= null
+
+block title
+	- let  title= 'Checkout'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	+main
+		+sCheckout4
+		
+	+parts('footer')

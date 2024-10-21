@@ -3,17 +3,31 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-	
-	&__row{
-		// --bs-gutter-x: #{rem()};
-		// --bs-gutter-y: #{rem()};
-	}
+
+  &__col {
+    @include media-breakpoint-down(lg) {
+      &:not(:last-child) {
+        margin-bottom: rem(30);
+      }
+    }
+  }
+
 	p {
     color: $gray-600;
     font-size: rem(14);
 
     span {
       color: $primary;
+    }
+  }
+
+  .card-aside {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    &:after {
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
     }
   }
 
@@ -43,6 +57,7 @@
     padding: rem(22) rem(32);
     @include media-breakpoint-up(xl) {
       padding: rem(32) rem(48);
+      margin-bottom: rem(18);
     }
   }
 
@@ -68,6 +83,54 @@
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
 } // end.sOrderConfirmed
+
+.total-card {
+  max-width: rem(293);
+  margin-left: auto;
+	@include media-breakpoint-up(xl) {
+    margin-right: rem(26);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(10);
+    opacity: 0.8;
+
+    margin-bottom: rem(10);
+  }
+
+  &__title {
+    font-size: rem(18);
+    letter-spacing: 0.06em;
+  }
+
+  &__price {
+    font-size: rem(20);
+    letter-spacing: 0.05em;
+  }
+
+  &__sub {
+    font-size: rem(12);
+    color: $gray-600;
+    text-align: right;
+    letter-spacing: 0.05em;
+
+    position: relative;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: rem(6);
+      height: rem(6);
+      border-radius: 50%;
+      background: $purple;
+
+      margin-right: rem(8);
+    }
+  }
+}
+
 
 .order-item {
   display: grid;

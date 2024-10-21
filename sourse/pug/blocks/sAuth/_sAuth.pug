@@ -10,7 +10,7 @@ mixin sAuth(data)
 				.tabs__content.active
 					.card
 						+form-wrap
-							+input('Enter your email', 'text', '')
+							+input('Enter your email', 'email', '')
 							+input('Enter your password', 'password', '')
 								.password.text-center: a(href="#") Forgot your password?
 							.btn-wrap.text-center
@@ -18,7 +18,7 @@ mixin sAuth(data)
 				.tabs__content
 					.card.card_sm
 						+form-wrap
-							+input('Enter your email', 'text', '').is-invalid
+							+input('Enter your email', 'email', '').is-invalid
 								.invalid-feedback Some error
 							+input('Enter your password', 'password', '')
 							+input('Confirm password', 'password', '')

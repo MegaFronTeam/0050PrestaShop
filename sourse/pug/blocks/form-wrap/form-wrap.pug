@@ -78,4 +78,9 @@ mixin add-file(n)
 mixin policy()
 	+e.policy
 		+in-c()(checked)
-			+e.SMALL.text.text-secondary Согласен на обработку и хранение моих персональных данных в соответствии с условиями
+			+e.s.text I agree to the terms and conditions and the privacy policy
+
+mixin policy2()
+	+e.policy
+		+in-c()(checked)
+			+e.s.text I agree to the #[a(href='#') terms of service] and will adhere to them unconditionally.

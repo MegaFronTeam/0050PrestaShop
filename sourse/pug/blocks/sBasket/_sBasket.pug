@@ -55,3 +55,20 @@ mixin basketItem(i, title, price, newPrice )
 			if !newPrice
 				.prices
 					.price= price
+
+
+mixin basketItem2(i, title, price, newPrice )
+	+b.basket-item.product-item
+		+e.item.A(href='#')
+			+e.img-wrap: +img(`img/prod-${i}.jpg`).img-bg
+			+e.descr.small
+				.title.fw-700.ls-4=title
+		+e.prices-wrap
+			if newPrice
+				.prices
+					.price_old.small €130
+					span -€10
+					+e.new-price €120
+			if !newPrice
+				.prices
+					.price= price

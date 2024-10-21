@@ -376,6 +376,22 @@ function eventHandler() {
   })
 
 
+  const showMoreBtn = document.getElementById('show-more-btn');
+  const hideMoreBtn = document.getElementById('hide-more-btn');
+  const additionalWrap = document.querySelector('.additional-wrap');
+
+  if (additionalWrap) {
+    showMoreBtn.addEventListener('click', function() {
+      additionalWrap.classList.add('show-all');
+    });
+  
+    hideMoreBtn.addEventListener('click', function() {
+      additionalWrap.classList.remove('show-all');
+    });
+  
+  }
+
+
 }
 if (document.readyState !== "loading") {
 	eventHandler();

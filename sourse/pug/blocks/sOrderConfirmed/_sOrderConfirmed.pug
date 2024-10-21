@@ -3,7 +3,7 @@ mixin sOrderConfirmed(data)
 	+b.SECTION.sOrderConfirmed.section#sOrderConfirmed&attributes(attributes)
 		.container: .inner-bg
 				+e.row.row
-					.col-lg-8: +e.item
+					+e.col.col-lg-8: +e.item
 						.item-title.item-title_green.fw-700.ls-6 Your order is confirmed
 						.inner-wrap
 							p Please seAn email has been sent to the #[span nicolomelodini@gmail.com] address.nd us your check including the following details:
@@ -18,9 +18,23 @@ mixin sOrderConfirmed(data)
 								+order-item(3, 3, '€20', '€60')
 								+order-item(5, 1, '€45', '€45')
 							.summary
-					.col-lg-4
+								+total
+					+e.col.col-lg-4
 						+card-aside3
 	// end sOrderConfirmed
+
+mixin total
+	+b.total-card
+		+e.item
+			+e.title Subtotal
+			+e.price.fw-600 €225
+		+e.item
+			+e.title Shipping and hadling
+			+e.price.fw-600 €20
+		+e.item
+			+e.price.ttu.fw-600 TOTAL
+			+e.price.fw-600 €245
+		+e.sub Taxes included
 
 mixin order-item(i, q, price, total, newPrice )
 	+b.order-item

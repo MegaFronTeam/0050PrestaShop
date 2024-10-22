@@ -89,6 +89,7 @@ function eventHandler() {
         nextEl: sliderElement.querySelector('.swiper-button-next'),
         prevEl: sliderElement.querySelector('.swiper-button-prev'),
       },
+      loop: true,
       pagination: {
         el: sliderElement.querySelector('.swiper-pagination'),
         type: 'bullets',
@@ -364,7 +365,7 @@ function eventHandler() {
   
     if (btnSearch) {
       btnSearch.addEventListener('click', ()=> {
-        wrapSearch.classList.add('show')
+        wrapSearch.classList.toggle('show')
       })
     }
 

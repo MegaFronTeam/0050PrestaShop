@@ -146,17 +146,19 @@
       transform: translateY(0);
       width: 100%;
       opacity: 0;
+      visibility: hidden;
+      transform: translateY(174px);
+      @include media-breakpoint-up(sm) {
+        transform: translateY(223px);
+      }
+      @include media-breakpoint-up(md) {
+        transform: translateY(243px);
+      }
       @include mt;
 
       &.show {
         opacity: 1;
-        transform: translateY(174px);
-        @include media-breakpoint-up(sm) {
-          transform: translateY(223px);
-        }
-        @include media-breakpoint-up(md) {
-          transform: translateY(243px);
-        }
+        visibility: visible;
       }
     }
 

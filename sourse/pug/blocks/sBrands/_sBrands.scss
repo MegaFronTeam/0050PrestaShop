@@ -2,10 +2,12 @@
 .sBrands {
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
-	--sTPB: #{rem(90)};
   overflow: hidden;
   @include media-breakpoint-up(lg) {
     --sPB: #{rem(126)};
+  }
+  @include media-breakpoint-up(xl) {
+    --sTPB: #{rem(90)};
   }
 
 	&__grid {

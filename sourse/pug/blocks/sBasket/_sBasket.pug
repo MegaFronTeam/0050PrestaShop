@@ -45,16 +45,17 @@ mixin basketItem(i, title, price, newPrice )
 			+e.descr.small
 				.title.fw-700.ls-4=title
 				.art.ls-7 Article: 5013 4569
-		+addblock
-		+e.prices-wrap
-			if newPrice
-				.prices
-					.price_old.small €130
-					span -€10
-					+e.new-price €120
-			if !newPrice
-				.prices
-					.price= price
+		+e.wrap-prices-card
+			+addblock
+			+e.prices-wrap
+				if newPrice
+					.prices
+						.price_old.small €130
+						span -€10
+						+e.new-price €120
+				if !newPrice
+					.prices
+						.price= price
 
 
 mixin basketItem2(i, title, price, newPrice )

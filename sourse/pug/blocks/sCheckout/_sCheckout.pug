@@ -388,14 +388,14 @@ mixin sCheckout4(data)
 										span.custom-input__text.form-check-label Pay by Check
 										.content
 											p Please send us your check including the following details:
-											.address-item__addr-item
+											.address-item__addr-item.not-hide
 												.address-item__title Amount
 												.address-item__value €79
 													.total-card__sub Taxes included
-											.address-item__addr-item
+											.address-item__addr-item.not-hide
 												.address-item__title Payee
 												.address-item__value Payee
-											.address-item__addr-item
+											.address-item__addr-item.not-hide
 												.address-item__title Send your check to this address
 												.address-item__value Send your check to this address
 									+in-c('radio','Pay by bank wire', 'payment')

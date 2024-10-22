@@ -75,7 +75,22 @@
       grid-template-columns: repeat(3,1fr);
     }
 
-    .btn:not(.btn-secondary) {
+    .btn.active {
+      background: $secondary;
+      color: $white;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      font-family: $headings-font-family;
+      box-shadow: 4px 0 8px 0 rgba(0, 0, 0, 0.15);
+      --bs-btn-padding-y: #{rem(9)};
+      @include media-breakpoint-up(lg) {
+        font-size: rem(36);
+      }
+
+      cursor: unset;
+    }
+
+    .btn:not(.active) {
       color: $teal-400;
       letter-spacing: 0.04em;
       @include media-breakpoint-up(lg) {
@@ -83,12 +98,9 @@
       }
     }
     .btn-secondary {
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      box-shadow: 4px 0 8px 0 rgba(0, 0, 0, 0.15);
-      @include media-breakpoint-up(lg) {
-        font-size: rem(36);
-      }
+    }
+    .btn {
+      --bs-btn-padding-y: #{rem(15)};
     }
 	}
 
@@ -174,6 +186,12 @@
       padding: rem(8) rem(20);
       padding-right: 0;
       border-radius: 5px;
+
+      select {
+        appearance: none !important;
+        background-image: none;
+        font-weight: 400;
+      }
     }
 
     .sCatalog__input-title {
@@ -217,6 +235,7 @@
 }
 
 select {
+  cursor: pointer;
   background: $gray-100;
   padding: rem(14) rem(24);
   padding-right: rem(42);
@@ -353,7 +372,7 @@ select {
       background-size: contain;
       margin-left: rem(4);
       vertical-align: middle;
-      transform: rotate(180deg);
+      transform: rotate(0deg);
     }
   }
   &__item {
@@ -365,7 +384,7 @@ select {
     }
     &.active {
       .dd-group__head:after {
-        transform: rotate(0deg);
+        transform: rotate(180deg);
       }
     }
   }

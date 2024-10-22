@@ -89,7 +89,7 @@ mixin linksCard
 	.links-card.links-card__links-wr
 		button.link-item(href='#'): +icon('share')
 		button.link-item(href='#'): +icon('compare')
-		button.link-item(href='#'): +icon('heart')
+		button.link-item(href='#').active: +icon('heart')
 
 mixin range(c1, c2, fromTxt='from', toTxt='to')
 	+b.range-wrap--filter.price_slider_amount&attributes(attributes)

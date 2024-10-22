@@ -224,7 +224,6 @@
 		font-size: rem(12);
 	}
   }
-
 }
 
 .basket-item {
@@ -268,9 +267,6 @@
     align-items: center;
     gap: rem(10);
     color: $body-color;
-    @include media-breakpoint-up(md) {
-      width: 50%;
-    }
     @include media-breakpoint-up(xl) {
       gap: rem(40);
     }
@@ -284,6 +280,19 @@
   &__descr {
     @include media-breakpoint-up(md) {
       max-width: rem(190);
+    }
+  }
+  &__wrap-prices-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(20);
+    width: 80%;
+    max-width: rem(244);
+    @include media-breakpoint-up(md) {
+      width: auto;
+      max-width: none;
+      justify-content: space-evenly;
     }
   }
 
@@ -304,13 +313,19 @@
   align-items: center;
   gap: rem(20);
   @include media-breakpoint-up(md) {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
   }
 
-  padding: rem(24) rem(36);
-  padding-right: rem(60);
-  @include media-breakpoint-down(md) {
-    padding-top: rem(60);
+  padding: rem(24);
+  padding-top: rem(50);
+  padding-right: rem(30);
+
+  @include media-breakpoint-up(md) {
+    padding: rem(24) rem(36);
+  }
+  @include media-breakpoint-up(xl) {
+    padding-right: rem(60);
   }
 
   &__new-price {
@@ -323,16 +338,9 @@
     font-size: 18px;
   }
   &__prices-wrap {
-    @include media-breakpoint-up(md) {
-      width: 20%;
-    }
-    margin-bottom: rem(10);
-
     span {
       font-size: rem(14);
     }
   }
-  .addBlock, .prices-wrap {
-    // width: max-content;
-  }
+
 }

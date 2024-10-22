@@ -21,17 +21,27 @@
   justify-content: center;
 
   .inner-bg {
-    max-width: rem(460);
+    max-width: rem(560);
     margin: auto;
+    padding: rem(20);
+    background: $white;
+    border-radius: rem(20);
+    @include media-breakpoint-up(md) {
+      padding: rem(40);
+    }
+    @include media-breakpoint-down(md) {
+      // max-width: calc(100% - 40px);
+    }
 
     &:before {
-      @include media-breakpoint-down(md) {
-        --pad: 12px;
-        width: calc(100% + 12px);
-        left: -6px;
-        top: calc(var(--pad)* -2);
-        height: calc(100% + var(--pad)* 4);
-      }
+      content: none !important;
+      // @include media-breakpoint-down(md) {
+      //   --pad: 12px;
+      //   width: calc(100% + 12px);
+      //   left: -6px;
+      //   top: calc(var(--pad)* -2);
+      //   height: calc(100% + var(--pad)* 4);
+      // }
     }
   }
 
@@ -69,12 +79,19 @@
     }
   }
 
+  
+  .btn {
+    @include media-breakpoint-down(md) {
+      --bs-btn-padding-x: #{rem(10)};
+    }
+  }
+
   &__tabs-caption {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    --margin: 6px;
+    --margin: 20px;
     @include media-breakpoint-up(md) {
-      --margin: 48px;
+      --margin: 40px;
     }
     margin-right: calc(-1 * var(--margin));
     margin-left: calc(-1 * var(--margin));
@@ -111,6 +128,12 @@
     opacity: .8;
     // max-width: 98%;
     // margin: auto;
+  }
+
+  h3 {
+	  @include media-breakpoint-down(sm) {
+      font-size: rem(18);
+    }
   }
 
 	@include media-breakpoint-up(xl) {}

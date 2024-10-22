@@ -361,7 +361,7 @@ ul {
 
 	&::after {
 		display: none;
-	} 
+	}
 	&-next {
 		right: var(--swiperArrowPosition);
 	}
@@ -369,6 +369,9 @@ ul {
 	&-prev {
 		left: var(--swiperArrowPosition);
 	}
+}
+.swiper-button-disabled {
+  opacity: .5;
 }
 
 .swiper-pagination {

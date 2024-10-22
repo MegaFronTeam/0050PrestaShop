@@ -131,7 +131,14 @@ mixin tabsGroup
 					.btn.btn-secondary(href='#') Write review
 				.top.top2
 					.small 1–3 of 9 Reviews
-					+input("Most Recent",'select','Sort by:')
+					//- +input("Most Recent",'select','Sort by:')
+					label
+						span.sCatalog__input-title Sort by:
+						select
+							option Most Recent
+							option Most Recent
+							option 30
+							option 40
 				.reviews__stars(data-star=`4`).stars-small.mb-39
 					+icon('star')
 					+icon('star')
@@ -162,7 +169,13 @@ mixin tabsGroup
 					.btn.btn-secondary(href='#') Write review
 				.top.top2
 					.small 1–3 of 9 Reviews.stars-small
-					+input("Most Recent",'select','Sort by:')
+					label
+						span.sCatalog__input-title Sort by:
+						select
+							option Most Recent
+							option Most Recent
+							option 30
+							option 40
 				.reviews__stars(data-star=`4`).mb-39
 					+icon('star')
 					+icon('star')
@@ -193,7 +206,13 @@ mixin tabsGroup
 					.btn.btn-secondary(href='#') Write review
 				.top.top2
 					.small 1–3 of 9 Reviews
-					+input("Most Recent",'select','Sort by:')
+					label
+						span.sCatalog__input-title Sort by:
+						select
+							option Most Recent
+							option Most Recent
+							option 30
+							option 40
 				.reviews__stars(data-star=`4`).mb-39
 					+icon('star')
 					+icon('star')

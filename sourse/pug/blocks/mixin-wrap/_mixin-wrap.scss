@@ -498,7 +498,7 @@
     &:hover {
       color: $teal-300;
     }
-    &:active {
+    &:active, &.active {
       color: $teal-400;
     }
   }

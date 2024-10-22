@@ -17,6 +17,3 @@
 2. <https://megafronteam.github.io/0050PrestaShop/07-password-2.html>
 3. <https://megafronteam.github.io/0050PrestaShop/08-order-confirmed.html>
 3. <https://megafronteam.github.io/0050PrestaShop/09-login.html>
-
-#### In progress
-1. <https://megafronteam.github.io/0050PrestaShop/00-modal.html>

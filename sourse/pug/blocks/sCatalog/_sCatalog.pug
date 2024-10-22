@@ -6,7 +6,7 @@ mixin sCatalog(h2)
 			+img(`img/svg/catalog-r.svg`).catalog-bg.catalog-r
 			+e.top
 				+e.top-btns
-					+e.btn.btn.btn-secondary(href='#') New
+					+e.btn.btn.active(href='#') New
 					+e.btn.btn(href='#') Bestsellers
 					+e.btn.btn(href='#') Best prices
 					+img(`img/svg/girl.svg`).girl
@@ -40,7 +40,13 @@ mixin sCatalog2(h2)
 					+e.nav-sort
 						.small.fw-700.res.ls-4 125 Results
 						.sorts
-							+input("Price High - Low",'select','Sort by:')
+							label
+								span.sCatalog__input-title Sort by:
+								select
+									option Price High - Low
+									option Price High - Low
+									option 30
+									option 40
 							//- +input("Price High - Low",'select','Sort by:')
 							select
 								option 10

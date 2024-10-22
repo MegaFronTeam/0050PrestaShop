@@ -83,6 +83,7 @@
       font-family: $headings-font-family;
       box-shadow: 4px 0 8px 0 rgba(0, 0, 0, 0.15);
       --bs-btn-padding-y: #{rem(9)};
+      font-size: rem(24);
       @include media-breakpoint-up(lg) {
         font-size: rem(36);
       }

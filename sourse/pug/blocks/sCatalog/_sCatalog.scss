@@ -98,12 +98,15 @@
         font-size: rem(28);
       }
     }
-    .btn-secondary {
-    }
+
     .btn {
       --bs-btn-padding-y: #{rem(15)};
     }
 	}
+  .product-item .product-item__price-wr {
+    
+    max-width: 55%;
+  }
 
   .btn {
     --bs-btn-padding-x: #{rem(10)};

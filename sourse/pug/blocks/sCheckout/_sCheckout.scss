@@ -154,6 +154,21 @@
     background: $teal-600;
   }
 
+  &.filled {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: $teal-600;
+      width: 3px;
+      height: 35%;
+      border-radius: 0 2px 2px 0;
+      @include mt;
+    }
+  }
   &.filled .title-wrap {
     .checkout-title::before {
       color: $primary;
@@ -495,8 +510,25 @@
     min-height: rem(220);
   }
 
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    opacity: 0;
+    transform: translateY(-50%);
+    background: $teal-600;
+    width: 4px;
+    height: 80%;
+    border-radius: 0 2px 2px 0;
+    @include mt;
+  }
+
   &:hover {
     box-shadow: 0 3px 24px 0 rgba(20, 169, 174, 0.2);
+    &:before {
+      opacity: 1;
+    }
   }
 
   .custom-input__text {
@@ -603,6 +635,17 @@
   position: relative;
   border: 1px solid $teal-200;
   margin-bottom: rem(24);
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background: $teal-200;
+    width: 4px;
+    height: 35%;
+    border-radius: 0 2px 2px 0;
+  }
 
   &:hover {
     box-shadow: 0 3px 24px 0 rgba(20, 169, 174, 0.2);

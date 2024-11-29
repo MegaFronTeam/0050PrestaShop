@@ -87,9 +87,9 @@ mixin sectionTitle(title)
 
 mixin linksCard
 	.links-card.links-card__links-wr
-		button.link-item(href='#'): +icon('share')
-		button.link-item(href='#'): +icon('compare')
-		button.link-item(href='#').active: +icon('heart')
+		button.link-item: +icon('share')
+		button.link-item: +icon('compare')
+		button.link-item.active: +icon('heart')
 
 mixin range(c1, c2, fromTxt='from', toTxt='to')
 	+b.range-wrap--filter.price_slider_amount&attributes(attributes)
@@ -113,7 +113,7 @@ mixin rangePrice(c1, c2, fromTxt='От', toTxt='До',)
 		input.range-slider.slider-js(type='text'  data-min=c1  data-max=c2)
 
 mixin product-item(i, t, star, pr, newP)
-	+b.ARTICLE.product-item(href="#")
+	+b.A.product-item(href="#")
 		+e.top-wrap
 			.new.left-line NEW
 			+linksCard
@@ -138,5 +138,5 @@ mixin product-item(i, t, star, pr, newP)
 			if !newP
 				+e.price-wr
 					+e.price.fw-600!= pr
-			+e.btn.btn.btn-secondary(href='#'): +icon('cart')
+			+e.btn.BUTTON.btn.btn-secondary: +icon('cart')
 	// /.product-item

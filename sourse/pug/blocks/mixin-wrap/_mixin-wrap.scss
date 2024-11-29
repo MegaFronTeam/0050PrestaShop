@@ -511,6 +511,7 @@
   &__title {
     margin-bottom: rem(8);
     line-height: 133%;
+    color: $body-color;
     @include media-breakpoint-up(lg) {
       font-size: rem(18);
     }
